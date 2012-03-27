@@ -1,3 +1,4 @@
+
 source 'https://rubygems.org'
 gem 'rails', '3.2.2'
 gem 'sqlite3'
@@ -18,3 +19,4 @@ gem "capybara", ">= 1.1.2", :group => :test
 gem "database_cleaner", ">= 0.7.1", :group => :test
 gem "launchy", ">= 2.0.5", :group => :test
 gem "devise", ">= 2.0.4"
+
