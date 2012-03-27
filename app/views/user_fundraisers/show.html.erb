@@ -1,0 +1,17 @@
+<h1>User Fundraiser</h1>
+
+<p>
+  <b>User</b><br>
+  <%= @user_fundraiser.user_id %>
+</p>
+
+<p>
+  <b>Fundraiser</b><br>
+  <%= @user_fundraiser.fundraiser_id %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', user_fundraisers_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_user_fundraiser_path(@user_fundraiser), :class => 'btn' %>
+  <%= link_to 'Delete', user_fundraiser_path(@user_fundraiser), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

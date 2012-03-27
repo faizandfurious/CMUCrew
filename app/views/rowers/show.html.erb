@@ -1,0 +1,52 @@
+<h1>Rower</h1>
+
+<p>
+  <b>First name</b><br>
+  <%= @rower.first_name %>
+</p>
+
+<p>
+  <b>Last name</b><br>
+  <%= @rower.last_name %>
+</p>
+
+<p>
+  <b>Weight</b><br>
+  <%= @rower.weight %>
+</p>
+
+<p>
+  <b>Height</b><br>
+  <%= @rower.height %>
+</p>
+
+<p>
+  <b>Rowing side</b><br>
+  <%= @rower.rowing_side %>
+</p>
+
+<p>
+  <b>Email</b><br>
+  <%= @rower.email %>
+</p>
+
+<p>
+  <b>Phone</b><br>
+  <%= @rower.phone %>
+</p>
+
+<p>
+  <b>Year</b><br>
+  <%= @rower.year %>
+</p>
+
+<p>
+  <b>Major</b><br>
+  <%= @rower.major %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', rowers_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_rower_path(@rower), :class => 'btn' %>
+  <%= link_to 'Delete', rower_path(@rower), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

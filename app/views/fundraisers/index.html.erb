@@ -1,0 +1,27 @@
+<h1>Fundraisers</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Event Name</th>
+      <th>Event Type</th>
+      <th>Event Date</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @fundraisers.each do |fundraiser| %>
+      <tr>
+        <td><%= link_to fundraiser.name, fundraiser_path(fundraiser) %></td>
+        <td><%= FundraiserType.find(fundraiser.fundraiser_type.id).name %></td>
+        <td><%= fundraiser.event_date %></td>
+        <td><%= fundraiser.location %></td>
+        <td>
+          <%= link_to 'Edit', edit_fundraiser_path(fundraiser), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', fundraiser_path(fundraiser), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', new_fundraiser_path, :class => 'btn btn-primary' %>

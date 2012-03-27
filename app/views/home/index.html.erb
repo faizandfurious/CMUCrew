@@ -1,0 +1,19 @@
+
+<div class="well">
+	<h1>Welcome to CMU Crew's Homepage!</h1>
+	
+	<div class= "general_info"></br>
+      <p>Located in Pittsburgh, PA Carnegie Mellon has fielded competitive men's
+      and women's crews since 1987. As member of American Collegiate Rowing
+      Association we compete in fall and spring races throughout the Northeast
+      and Mid Atlantic regions. Over the years we've been competitive at regattas 
+      such as Head of the Charles and Dad Vail Regatta.</p>
+    </div>
+</div>
+
+<div class="well">
+	<h3>Home</h3>
+	<% @users.each do |user| %>
+	  <p>User: <%= user.first_name %> </p>
+	<% end %>
+</div>

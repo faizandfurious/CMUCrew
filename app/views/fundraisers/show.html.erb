@@ -1,0 +1,32 @@
+<h1>Fundraiser</h1>
+
+<p>
+  <b>Name</b><br>
+  <%= @fundraiser.name %>
+</p>
+
+<p>
+  <b>Type</b><br>
+  <%= @fundraiser.fundraiser_type_id %>
+</p>
+
+<p>
+  <b>Date</b><br>
+  <%= @fundraiser.event_date %>
+</p>
+
+<p>
+  <b>Location</b><br>
+  <%= @fundraiser.location %>
+</p>
+
+<p>
+  <b>Description</b><br>
+  <%= @fundraiser.description %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', fundraisers_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_fundraiser_path(@fundraiser), :class => 'btn' %>
+  <%= link_to 'Delete', fundraiser_path(@fundraiser), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

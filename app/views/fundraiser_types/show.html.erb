@@ -1,0 +1,12 @@
+<h1>/Fundraiser Type</h1>
+
+<p>
+  <b>Name</b><br>
+  <%= @fundraiser_type.name %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', fundraiser_types_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_fundraiser_type_path(@fundraiser_type), :class => 'btn' %>
+  <%= link_to 'Delete', fundraiser_type_path(@fundraiser_type), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

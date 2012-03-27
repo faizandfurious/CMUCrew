@@ -1,0 +1,27 @@
+<h1>Rowers</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Weight</th>
+      <th>Height</th>
+      <th>Rowing Side</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @rowers.each do |rower| %>
+      <tr>
+        <td><%= rower.first_name %> <%= rower.last_name %></td>
+        <td><%= rower.weight %></td>
+        <td><%= rower.height %></td>
+        <td><%= rower.rowing_side %></td>
+        <td>
+          <%= link_to 'Edit', edit_rower_path(rower), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', rower_path(rower), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', new_rower_path, :class => 'btn btn-primary' %>

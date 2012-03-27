@@ -1,4 +1,24 @@
 CMUCrewWebsite::Application.routes.draw do
+  resources :rowers
+
+  devise_for :users do  
+    get "/edit" => "devise/registrations#edit"
+    match '/edit', :to => 'devise/registrations#edit'   
+    get "/login" => "devise/sessions#new"
+    match '/login', :to => 'devise/sessions#new'
+    get "/logout" => "devise/sessions#destroy"
+    match '/logout', :to => 'devise/sessions#destroy'
+  end
+
+  resources :fundraiser_types
+
+  get "home/index"
+
+  
+  resources :user_fundraisers  
+  resources :fundraisers
+  resources :home
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +68,7 @@ CMUCrewWebsite::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+   root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 

@@ -1,0 +1,24 @@
+<%= form_for @user_fundraiser, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> /User Fundraiser</legend>
+
+    <div class="control-group">
+      <%= f.label :user_id, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.collection_select :user_id, User.all, :id, :first_name, :prompt => 'Select...' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :fundraiser_id, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.collection_select :fundraiser_id, Fundraiser.all, :id, :name, :prompt => 'Select...' %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', user_fundraisers_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>
