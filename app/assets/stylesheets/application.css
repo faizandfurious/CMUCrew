@@ -21,3 +21,9 @@ ul.hmenu {
 ul.hmenu li {
   display: inline;  
 }
+.crest-header{
+	height:6em;
+	background-image:image-url('plaid.png');
+	background-repeat:repeat-x;
+	margin-bottom:1em;
+}
