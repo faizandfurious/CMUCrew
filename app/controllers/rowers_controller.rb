@@ -1,4 +1,5 @@
 class RowersController < ApplicationController
+  before_filter :authenticate_user!
   # GET /rowers
   # GET /rowers.json
   def index

@@ -1,4 +1,5 @@
 class UserFundraisersController < ApplicationController
+  before_filter :authenticate_user!
 
   # GET /user_fundraisers
   # GET /user_fundraisers.json

@@ -52,10 +52,19 @@
       <div class="content">
         <div class="row">
 		   <div class="span12 crest-header"></div><!-- End crest-header -->
-           <div class="span8">
+           <div class="span9">
               <%= yield %>
             </div>
-            <div class="span4">
+            <div class="span3">
+              <div class="well weather">
+				Weather Report:
+              </div><!--/.well weather-->
+              <div class="well fundraising">
+				Fundraising Report: You are currently signed up for 
+				<% @user_fundraisers.each do |uf| %>
+					</br><%= uf.fundraiser.name %>
+				<% end %>
+              </div><!--/.well weather-->
               <div class="well sidebar-nav">
                 <h3>Sidebar</h3>
                 <ul class="nav nav-list">
@@ -66,9 +75,6 @@
                 <li><%= link_to "Fundraiser Types", fundraiser_types_path  %></li>
                 </ul>
               </div><!--/.well -->
-              <div class="well weather">
-				Weather Report:
-              </div><!--/.well weather-->
             </div><!--/span-->
         </div><!--/row-->
       </div><!--/content-->
