@@ -26,11 +26,23 @@
 
     <div class="container">
       <div class="content">
+		<div class="row">
+			<div class="span12">
+			</div>
+		</div>
         <div class="row">
 		   <div class="span12 crest-header">
 		   	<div class="row">
-				<div class="span2 offset5">
-					<%= link_to image_tag("crest.png", :size => "150x150", :alt => "CMU Crew"), "/", :title => 'CMU Crew' %></div>
+				<div class="span2 home-button">
+					<%= link_to image_tag("crest.png", :size => "120x120", :alt => "CMU Crew"), "/", :title => 'CMU Crew' %>
+				</div>
+				<div class="span10">
+					<ul class="navibar">
+						<li>Practice Schedule</li>
+						<li>Fundraising</li>
+						<li>Races</li>
+						<li>Captains' Quarters</li>
+					</ul>
 				</div>
 			</div>
 		   </div><!-- End crest-header -->
@@ -41,14 +53,19 @@
             </div>
             <div class="span3">
 	          <div class="well login-box">
-				Weather Report:
+				<ul class="hmenu">
+					<h4>Account Details</h4>
+					<%= render 'devise/menu/registration_items' %>
+				  	<%= render 'devise/menu/login_items' %>
+				</ul>
               </div><!--/.well weather-->
               <div class="well weather">
-				Weather Report:
+				<h4>Weather Report</h4>
               </div><!--/.well weather-->
               <div class="well fundraising">
 				<% if @user_fundraisers %>
-					Fundraising Report: You are currently signed up for 
+					<h4>Fundraising Report</h4> 
+						You are currently signed up for 
 					<% @user_fundraisers.each do |uf| %>
 						</br><%= uf.fundraiser.name %>
 					<% end %>

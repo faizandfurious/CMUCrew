@@ -21,11 +21,35 @@ ul.hmenu {
 ul.hmenu li {
   display: inline;  
 }
+
+ul.navibar {
+	text-decoration:none;
+	list-style:none;
+	width:100%;
+}
+ul.navibar li{
+	color:white;
+	font-size:16px;
+  	float: left;
+  	text-align: center;
+  	width: 24%;
+	padding-top:20px;
+}
+
 .crest-header{
 	height:6em;
 	background-image:url(<%=asset_path "plaid.png"%>);
 	background-repeat:repeat-x;
-	margin-bottom:1em;
+	margin-bottom:4em;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
-	}
+}
+.home-button{
+	background:none;
+	margin-top:-3em;
+}
+a:hover{
+	background: none;
+	border: none;
+	text-decoration:none;
+}
