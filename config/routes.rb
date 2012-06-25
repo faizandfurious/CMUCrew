@@ -12,7 +12,7 @@ CMUCrewWebsite::Application.routes.draw do
 
   resources :fundraiser_types
 
-  get "home/index"
+  match "/home/index" => "home#index", :via => [:get]
 
   
   resources :user_fundraisers  

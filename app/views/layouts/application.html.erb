@@ -22,47 +22,38 @@
   </head>
   <body>
 
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-          <div class="container">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="/">CMU Crew</a>
-          
-            <ul class="nav">
-                <li><%= link_to "Rowers", rowers_path  %></li>
-                <li><%= link_to "Fundraisers", fundraisers_path  %></li>
-                <li><%= link_to "User Fundraisers", user_fundraisers_path  %></li>
-                <li><%= link_to "Fundraiser Types", fundraiser_types_path  %></li>
-            </ul>
-			<ul class="pull-right hmenu">
-				<%= render 'devise/menu/registration_items' %>
-			  	<%= render 'devise/menu/login_items' %>
-			</ul>
-				
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
+
 
     <div class="container">
       <div class="content">
         <div class="row">
-		   <div class="span12 crest-header"></div><!-- End crest-header -->
+		   <div class="span12 crest-header">
+		   	<div class="row">
+				<div class="span2 offset5">
+					<%= link_to image_tag("crest.png", :size => "150x150", :alt => "CMU Crew"), "/", :title => 'CMU Crew' %></div>
+				</div>
+			</div>
+		   </div><!-- End crest-header -->
+		</div>
+		<div class="row">
            <div class="span9">
               <%= yield %>
             </div>
             <div class="span3">
+	          <div class="well login-box">
+				Weather Report:
+              </div><!--/.well weather-->
               <div class="well weather">
 				Weather Report:
               </div><!--/.well weather-->
               <div class="well fundraising">
-				Fundraising Report: You are currently signed up for 
-				<% @user_fundraisers.each do |uf| %>
-					</br><%= uf.fundraiser.name %>
+				<% if @user_fundraisers %>
+					Fundraising Report: You are currently signed up for 
+					<% @user_fundraisers.each do |uf| %>
+						</br><%= uf.fundraiser.name %>
+					<% end %>
+				<% else %>
+					You don't have any upcoming fundraising events!
 				<% end %>
               </div><!--/.well weather-->
               <div class="well sidebar-nav">
