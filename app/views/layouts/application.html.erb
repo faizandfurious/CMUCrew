@@ -31,6 +31,15 @@
 			</div>
 		</div>
         <div class="row">
+			<div class="span12 title">
+				<p><strong>Carnegie Mellon Crew</strong><p>
+			</div>
+			<div class="span12 login">
+				<ul>
+					<li>My Account</li>
+					<li>Logout</li>
+				</ul>
+			</div>
 		   <div class="span12 crest-header">
 		   	<div class="row">
 				<div class="span2 home-button">
@@ -38,10 +47,10 @@
 				</div>
 				<div class="span10">
 					<ul class="navibar">
-						<li>Complete Practice Schedule</li>
-						<li>Fundraising</li>
-						<li>Regattas and Races</li>
-						<li>Coaches' Quarters</li>
+						<li><%= image_tag('schedule.png')%></li>
+						<li><%= image_tag('fundraising.png')%></li>
+						<li><%= image_tag('races.png')%></li>
+						<li><%= image_tag('coaches.png')%></li>
 					</ul>
 				</div>
 			</div>
@@ -72,7 +81,7 @@
               </div><!--/.well weather-->
               <div class="well fundraising">
 						<h4>Fundraising Report</h4></br> 
-						<p>You have completed 1 of 5 required fundraising events.</p>
+						<p>You have completed <strong>1</strong> of <strong>5</strong> required fundraising events.</p>
 				<!-- <% if @user_fundraisers %>
 						You are currently signed up for 
 					<% @user_fundraisers.each do |uf| %>
@@ -97,7 +106,7 @@
       </div><!--/content-->
 
       <footer>
-        <p>&copy; Faiz Abbasi 2012</p>
+        
       </footer>
 
     </div> <!-- /container -->
