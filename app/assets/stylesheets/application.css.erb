@@ -12,7 +12,15 @@
  *= require_tree .
 */
 
+html{
+}
+
 body{
+	background-image:url(<%=asset_path "tempbackground.jpeg"%>); 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 	padding-top:60px;
 }
 
@@ -54,17 +62,25 @@ ul.navibar li{
 	background:none;
 	margin-top:-3em;
 }
-a {
-		background: none;
+a{
+	background-color:blue;
 }
 a:hover{
-	background: none;
+	background-color:blue;
 	border: none;
 	text-decoration:none;
 }
+
+.main-content{
+	background-color: white;
+	margin-bottom:4em;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
 .weather{
 	height:6em;
-	background-color:#66a3d2;
+	background: rgba(125, 173, 27, 0.9);
 	color:whitesmoke;
 }
 .weather-icon{
