@@ -28,6 +28,15 @@
       <%= f.password_field :password_confirmation %>
     </div>
   <% end %>
+
+  <% for role in Role.all %>
+    <div>
+      <%= check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role) %>
+      <%=h role.name %>
+    </div>  
+  <% end %>
+  <%= hidden_field_tag "user[role_ids][]", "" %>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

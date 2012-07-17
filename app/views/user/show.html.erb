@@ -10,6 +10,11 @@
   <%= @user.username %>
 </p>
 
+<p>
+	<b>Roles:</b>
+	<%= @user.role_ids %>
+</p>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

@@ -1,9 +1,19 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+	# Include default devise modules. Others available are:
+	# :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
+	devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :first_name, :last_name, :username, :weight, :height, :rowing_side, :email, :phone, :year, :major, :password, :password_confirmation, :remember_me
+
+	#Relationships
+	has_many :user_roles
+	has_many :roles, :through => :user_roles
+
+
+	# Setup accessible (or protected) attributes for your model
+	attr_accessible :first_name, :last_name, :username, :weight, :height, :rowing_side, :email, :phone, :year, :major, :password, :password_confirmation, :remember_me, :role_ids
+
+	#Methods
+	def has_role?(role_sym)
+	  roles.any? { |r| r.name.underscore.to_sym == role_sym }
+	end
 end
