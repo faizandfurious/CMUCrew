@@ -1,12 +1,14 @@
 CMUCrewWebsite::Application.routes.draw do
+
   resources :rowers
 
   devise_for :users
-  resources :users
+  resources :users, :controller => 'user'
 
   resources :fundraiser_types
 
   match "/home/index" => "home#index", :via => [:get]
+  match "/user" => "user#index"
 
   
   resources :user_fundraisers  
