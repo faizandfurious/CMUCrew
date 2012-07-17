@@ -1,23 +1,49 @@
+<% if user_signed_in? %>
 
-<div class="well">
-	<h1>Welcome Back, Faiz.</h1></br>
-	
-	<div class= "schedule">
-		<h3>Tomorrow's Schedule:</h3></br>
-		<div class="workout-description">
-			<p>Launch time is <strong>5:30am</strong>.</p>
-			<p>5x15 minute steady state row. Technical day.</p>
-		</div>
-		<div class="boat-assignment">
-			<ul class="boat-lineup">
-				<h3>Boat lineup</h3>
-				<li><strong>Coxswain </strong>Filipino Jones</li>				
-				<li><strong>Stroke Seat </strong>Joshua Harvey</li>
-				<li><strong>3 Seat </strong>Joe Guihan</li>
-				<li><strong>2 Seat </strong>Faiz Abbasi</li>
-				<li><strong>Bow Seat </strong>Wesley Transue</li>
-			</ul>
-			<p>You will be rowing the <strong>White V1</strong>.
-		</div>
-    </div>
+<h1>Welcome Back, <%= current_user.first_name %>.</h1></br>
+
+<div class= "schedule">
+	<h3>Tomorrow's Schedule:</h3></br>
+	<div class="workout-description">
+		<p>Launch time is <strong>5:30am</strong>.</p>
+		<p>5x15 minute steady state row. Technical day.</p>
+	</div>
+	<div class="boat-assignment">
+		<ul class="boat-lineup">
+			<h3>Boat lineup</h3>
+			<li><strong>Coxswain </strong>Filipino Jones</li>				
+			<li><strong>Stroke Seat </strong>Joshua Harvey</li>
+			<li><strong>3 Seat </strong>Joe Guihan</li>
+			<li><strong>2 Seat </strong>Faiz Abbasi</li>
+			<li><strong>Bow Seat </strong>Wesley Transue</li>
+		</ul>
+		<p>You will be rowing the <strong>White V1</strong>.
+	</div>
 </div>
+
+
+<% else %>
+
+<h1>Welcome to the Carnegie Mellon </br>University Rowing Club! </h1>
+</br></br>
+<p>
+Located in Pittsburgh, PA Carnegie Mellon has fielded competitive men's
+and women's crews since 1987. As member of American Collegiate Rowing
+Association we compete in fall and spring races throughout the Northeast
+and Mid Atlantic regions. Over the years we've been competitive at regattas 
+such as Head of the Charles and Dad Vail Regatta.
+</p>
+
+<h3>Latest News</h3>
+
+
+<p><span class="title">Tartan Crew returns from Occoquan Sprints.</span></br></br>          
+The team spent a fun, successful weekend at Fairfax Station, VA competing
+against many other strong teams at the 2012 Occoquan Sprints.
+Congratulations to the team for a great start to spring racing! 
+<a href="http://www.roninregistration.com/rowing/results/resultseventlist.asp?p=default&pt=rowing&GroupID=88916&Year=2012">View Regatta Results!</a>
+</p>
+
+
+
+<% end %>

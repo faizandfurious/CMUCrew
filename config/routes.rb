@@ -1,14 +1,8 @@
 CMUCrewWebsite::Application.routes.draw do
   resources :rowers
 
-  devise_for :users do  
-    get "/edit" => "devise/registrations#edit"
-    match '/edit', :to => 'devise/registrations#edit'   
-    get "/login" => "devise/sessions#new"
-    match '/login', :to => 'devise/sessions#new'
-    get "/logout" => "devise/sessions#destroy"
-    match '/logout', :to => 'devise/sessions#destroy'
-  end
+  devise_for :users
+  resources :users
 
   resources :fundraiser_types
 

@@ -1,5 +1,5 @@
 class FundraisersController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => 'index'
   
   # GET /fundraisers
   # GET /fundraisers.json
