@@ -6,14 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+roles = Role.find_or_create_by_name({name: 'Admin'})
+
+users = User.find_or_create_by_email(email: 'fabbasi@andrew.cmu.edu', password: 'admin1', password_confirmation: 'admin1')
+
+user_roles = UserRole.find_or_create_by_user_id(user_id:users.id, role_id:roles.id)
 
 fundraiser_types = FundraiserType.create([{name: 'Steelers Game'}, {name: 'Rent-A-Rower'}, {name:'Gwens Girls'}])
-
-fundraisers = Fundraiser.create([{name: 'Steelers Vs Jaguars', fundraiser_type_id: fundraiser_types.first, event_date: '2012-08-30', location: 'Heinz Field', description: 'Working a booth at the 
-	Steelers game.', capacity: 8}, {name: 'Steelers Vs Titans', fundraiser_type_id: fundraiser_types.first, event_date: '2012-09-08', location: 'Heinz Field', description: 'Working a booth at the Steelers
-	game.', capacity: 8}, {name: 'Steelers Vs Ravens', fundraiser_type_id: fundraiser_types.first, event_date: '2012-09-14', location: 'Heinz Field', description: 'Working a booth at the Steelers
-	game.', capacity: 8}, {name: 'Steelers Vs 49ers', fundraiser_type_id: fundraiser_types.first, event_date: '2012-10-01', location: 'Heinz Field', description: 'Working a booth at the Steelers
-	game.', capacity: 8}, {name: 'Steelers Vs Browns', fundraiser_type_id: fundraiser_types.first, event_date: '2012-10-10', location: 'Heinz Field', description: 'Working a booth at the Steelers
-	game.', capacity: 8}, {name: 'Moving Boxes', fundraiser_type_id: fundraiser_types.second, event_date: '2012-09-12', location: '5524 Fair Oaks St', description: 'You will be moving boxes and furniture. Should 
-	take about an hour or two.', capacity: 3},{name: 'Steelers Vs Titans', fundraiser_type_id: fundraiser_types.second, event_date: '2012-10-03', location: '5439 Beeler St', description: 'Pulling out 
-	weeds in the backyard. Should take around an hour.', capacity: 2},])

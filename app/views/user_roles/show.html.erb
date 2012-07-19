@@ -10,6 +10,7 @@
   <%= @user_role.role_id %>
 </p>
 
-
-<%= link_to 'Edit', edit_user_role_path(@user_role) %> |
-<%= link_to 'Back', user_roles_path %>
+<% if can? :update, @user_role %>
+	<%= link_to 'Edit', edit_user_role_path(@user_role) %> |
+	<%= link_to 'Back', user_roles_path %>
+<%end%>
