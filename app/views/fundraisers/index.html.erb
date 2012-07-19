@@ -16,12 +16,14 @@
         <td><%= FundraiserType.find(fundraiser.fundraiser_type.id).name %></td>
         <td><%= fundraiser.event_date %></td>
         <td><%= fundraiser.location %></td>
+        <td>
         <% if current_user.is_fundraiser? %>
-          <td>
               <%= link_to 'Edit', edit_fundraiser_path(fundraiser), :class => 'btn btn-mini' %>
               <%= link_to 'Destroy', fundraiser_path(fundraiser), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
-          </td>
+        <% else %>
+              <%= link_to 'Sign Up', 'home#index', :class => 'btn btn-mini' %>
         <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
