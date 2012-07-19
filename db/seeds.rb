@@ -6,10 +6,26 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-roles = Role.find_or_create_by_name({name: 'Admin'})
 
-users = User.find_or_create_by_email(email: 'fabbasi@andrew.cmu.edu', password: 'admin1', password_confirmation: 'admin1')
+#Myself (Admin rights)
+admin = Role.find_or_create_by_name({name: 'Admin'})
+faiz = User.find_or_create_by_email(email: 'fabbasi@andrew.cmu.edu', first_name: 'Faiz', last_name: 'Abbasi' password: 'admin1', password_confirmation: 'admin1')
+faiz_admin = UserRole.find_or_create_by_user_id(user_id:faiz.id, role_id:admin.id)
 
-user_roles = UserRole.find_or_create_by_user_id(user_id:users.id, role_id:roles.id)
+#Fundraisers
+fundraiser = Role.find_or_create_by_name({name: 'Fundraiser'})
+kelsey = User.find_or_create_by_email(email: 'kdiffley@andrew.cmu.edu', first_name: 'Kelsey', last_name: 'Diffley' password: 'password', password_confirmation: 'password')
+jinie = User.find_or_create_by_email(email: 'jinie@andrew.cmu.edu', first_name: 'Jinie', last_name: 'Haytko' password: 'password', password_confirmation: 'password')
+kelsey_fundraiser = UserRole.find_or_create_by_user_id(user_id: kelsey.id, role_id: fundraiser.id)
+jinie_fundraiser = UserRole.find_or_create_by_user_id(user_id: jinie.id, role_id: fundraiser.id)
 
-fundraiser_types = FundraiserType.create([{name: 'Steelers Game'}, {name: 'Rent-A-Rower'}, {name:'Gwens Girls'}])
+#Coach
+coach = Role.find_or_create_by_user_id({name: 'Coach'})
+alyssa = User.find_or_create_by_name(email:'alyssa@andrew.cmu.edu', first_name: 'Alyssa', last_name: 'Fogel', password: 'password', password_confirmation: 'password')
+alyssa_coach = UserRole.find_or_create_by_user_id(user_id: alyssa.id, role_id: coach.id)
+
+#Fundraiser Types
+steelers = FundraiserType.find_or_create_by_name(name: 'Steelers Game')
+rentarower = FundraiserType.find_or_create_by_name(name: 'Rent-A-Rower')
+gwensgirls = FundraiserType.find_or_create_by_name(name: 'Gwens Girls')
+
