@@ -1,13 +1,8 @@
-<h1>Fundraiser</h1>
-
-<p>
-  <b>Name</b><br>
-  <%= @fundraiser.name %>
-</p>
+<h2><%= @fundraiser.name %></h2>
 
 <p>
   <b>Type</b><br>
-  <%= @fundraiser.fundraiser_type_id %>
+  <%= @fundraiser.fundraiser_type.name %>
 </p>
 
 <p>

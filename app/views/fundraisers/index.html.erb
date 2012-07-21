@@ -1,30 +1,91 @@
 <% if user_signed_in? %>
-<h1>Fundraisers</h1>
+<h1>Steeler's Games</h1>
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
       <th>Event Name</th>
-      <th>Event Type</th>
       <th>Event Date</th>
       <th>Location</th>
     </tr>
   </thead>
   <tbody>
     <% @fundraisers.each do |fundraiser| %>
+    <% if fundraiser.fundraiser_type.name == "Steelers Game" %>
       <tr>
         <td><%= link_to fundraiser.name, fundraiser_path(fundraiser) %></td>
-        <td><%= FundraiserType.find(fundraiser.fundraiser_type.id).name %></td>
         <td><%= fundraiser.event_date %></td>
         <td><%= fundraiser.location %></td>
         <td>
         <% if current_user.is_fundraiser? %>
               <%= link_to 'Edit', edit_fundraiser_path(fundraiser), :class => 'btn btn-mini' %>
               <%= link_to 'Destroy', fundraiser_path(fundraiser), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+              <%= link_to 'Sign Up', user_fundraisers_path, :method => :index, :class => 'btn btn-mini' %>
         <% else %>
               <%= link_to 'Sign Up', 'home#index', :class => 'btn btn-mini' %>
         <% end %>
         </td>
       </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+<h1>Rent-A-Rowers</h1>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Event Name</th>
+      <th>Event Date</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @fundraisers.each do |fundraiser| %>
+    <% if fundraiser.fundraiser_type.name == "Rent-A-Rower" %>
+      <tr>
+        <td><%= link_to fundraiser.name, fundraiser_path(fundraiser) %></td>
+        <td><%= fundraiser.event_date %></td>
+        <td><%= fundraiser.location %></td>
+        <td>
+        <% if current_user.is_fundraiser? %>
+              <%= link_to 'Edit', edit_fundraiser_path(fundraiser), :class => 'btn btn-mini' %>
+              <%= link_to 'Destroy', fundraiser_path(fundraiser), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+              <%= link_to 'Sign Up', fundraiser_path(fundraiser), :method => :delete, :class => 'btn btn-mini' %>
+        <% else %>
+              <%= link_to 'Sign Up', 'home#index', :method => :delete, :class => 'btn btn-mini' %>
+        <% end %>
+        </td>
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+<h1>Gwen's Girls</h1>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Event Name</th>
+      <th>Event Date</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @fundraisers.each do |fundraiser| %>
+      <% if fundraiser.fundraiser_type.name == "Gwen's Girls" %>
+      <tr>
+        <td><%= link_to fundraiser.name, fundraiser_path(fundraiser) %></td>
+        <td><%= fundraiser.event_date %></td>
+        <td><%= fundraiser.location %></td>
+        <td>
+        <% if current_user.is_fundraiser? %>
+              <%= link_to 'Edit', edit_fundraiser_path(fundraiser), :class => 'btn btn-mini' %>
+              <%= link_to 'Destroy', fundraiser_path(fundraiser), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+              <%= link_to 'Sign Up', 'home#index', :method => :delete, :class => 'btn btn-mini' %>
+        <% else %>
+              <%= link_to 'Sign Up', 'home#index', :method => :delete, :class => 'btn btn-mini' %>
+        <% end %>
+        </td>
+      </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>
