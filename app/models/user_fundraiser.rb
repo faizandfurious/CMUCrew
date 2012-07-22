@@ -5,6 +5,7 @@ class UserFundraiser < ActiveRecord::Base
   # -----------------------------
   belongs_to :fundraiser
   belongs_to :user
+
   
   # Constants
   # ----------------------------

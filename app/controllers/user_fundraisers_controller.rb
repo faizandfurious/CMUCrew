@@ -43,7 +43,9 @@ class UserFundraisersController < ApplicationController
   # POST /user_fundraisers.json
   def create
     @user_fundraiser = UserFundraiser.new(params[:user_fundraiser])
-    
+    @user_fundraiser.user_id = params[:user_id]
+    @user_fundraiser.fundraiser_id = params[:fundraiser_id]
+
     respond_to do |format|
       if @user_fundraiser.save
         format.html { redirect_to @user_fundraiser, notice: 'User fundraiser was successfully created.' }

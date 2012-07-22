@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 	#Relationships
 	has_many :user_roles
 	has_many :roles, :through => :user_roles
+  has_many :fundraisers, :through => :user_fundraisers, :uniq => true
 
 
 	# Setup accessible (or protected) attributes for your model
