@@ -43,8 +43,11 @@ class UserFundraisersController < ApplicationController
   # POST /user_fundraisers.json
   def create
     @user_fundraiser = UserFundraiser.new(params[:user_fundraiser])
-    @user_fundraiser.user_id = params[:user_id]
-    @user_fundraiser.fundraiser_id = params[:fundraiser_id]
+
+    unless(params[:user_id].nil?)
+      @user_fundraiser.user_id = params[:user_id]
+      @user_fundraiser.fundraiser_id = params[:fundraiser_id]
+    end
 
     respond_to do |format|
       if @user_fundraiser.save

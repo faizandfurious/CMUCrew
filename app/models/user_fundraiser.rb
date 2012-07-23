@@ -6,6 +6,8 @@ class UserFundraiser < ActiveRecord::Base
   belongs_to :fundraiser
   belongs_to :user
 
+  validates_uniqueness_of :user_id, :scope => :fundraiser_id, :message => "You are already signed up for this fundraiser!"
+  validates_presence_of :user_id, :fundraiser_id
   
   # Constants
   # ----------------------------
