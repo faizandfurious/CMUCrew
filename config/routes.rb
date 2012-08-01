@@ -1,5 +1,21 @@
 CMUCrewWebsite::Application.routes.draw do
 
+  resources :races
+
+  resources :race_lineups
+
+  resources :workout_types
+
+  resources :practices
+
+  resources :practice_lineups
+
+  resources :boats
+
+  resources :user_lineups
+
+  resources :lineups
+
   resources :user_roles
 
   resources :roles

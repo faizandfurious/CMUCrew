@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @boat.name %>
+</p>
+
+<p>
+  <b>Boat type:</b>
+  <%= @boat.boat_type_id %>
+</p>
+
+<p>
+  <b>Color:</b>
+  <%= @boat.color %>
+</p>
+
+<p>
+  <b>Model:</b>
+  <%= @boat.model %>
+</p>
+
+
+<%= link_to 'Edit', edit_boat_path(@boat) %> |
+<%= link_to 'Back', boats_path %>

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Practice:</b>
+  <%= @practice_lineup.practice_id %>
+</p>
+
+<p>
+  <b>Lineup:</b>
+  <%= @practice_lineup.lineup_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_practice_lineup_path(@practice_lineup) %> |
+<%= link_to 'Back', practice_lineups_path %>
