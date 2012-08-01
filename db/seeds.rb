@@ -32,3 +32,29 @@ wesley = User.find_or_create_by_email(email:'wesley@andrew.cmu.edu', first_name:
 steelers = FundraiserType.find_or_create_by_name(name: 'Steelers Game')
 rentarower = FundraiserType.find_or_create_by_name(name: 'Rent-A-Rower')
 gwensgirls = FundraiserType.find_or_create_by_name(name: 'Gwens Girls')
+
+#Boats
+
+#Eights
+lyssyboo = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+sectional = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+elizabethwinter = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+highleyrecommended = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+abigailsimon = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+#Fours
+whitev1 = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+millikowski = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+classof05 = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+scooter = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+prinz = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+meatrack = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+#Pairs
+bearbetzler = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+oliversung = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+buttercup = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+#Doubles
+calbeardouble = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+merkledouble = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+#Singles
+resistance = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+millisingle = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")

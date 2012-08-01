@@ -1,3 +1,5 @@
+<% if user_signed_in? %>
+
 <h1>Listing races</h1>
 
 <table>
@@ -25,3 +27,9 @@
 <br />
 
 <%= link_to 'New Race', new_race_path %>
+<% else %>
+<h1>Complete Schedule</h1>
+<div class= "main_content">
+<p>We are currently on Summer break
+</div>
+<% end %>

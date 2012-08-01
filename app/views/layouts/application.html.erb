@@ -47,10 +47,10 @@
 				</div>
 				<div class="span10">
 					<ul class="navibar">
-						<li><%= image_tag('schedule.png')%></li>
+						<li><%= link_to image_tag("schedule.png", :alt => "Schedule"), practices_path %></li>
 						<li><%= link_to image_tag("fundraising.png", :alt => "Fundraising"), fundraisers_path %></li>
-						<li><%= image_tag('races.png')%></li>
-						<li><%= image_tag('coaches.png')%></li>
+						<li><%= link_to image_tag("races.png", :alt => "Races and Regattas"), races_path %></li>
+						<li><%= link_to image_tag("coaches.png", :alt => "Coaches Quarters"), workout_types_path %></li>
 					</ul>
 				</div>
 			</div>
