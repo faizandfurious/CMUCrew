@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120717210652) do
+ActiveRecord::Schema.define(:version => 20120801195605) do
+
+  create_table "boats", :force => true do |t|
+    t.string   "name"
+    t.string   "boat_type_id"
+    t.string   "color"
+    t.string   "model"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "fundraiser_types", :force => true do |t|
     t.string   "name"
@@ -28,6 +37,44 @@ ActiveRecord::Schema.define(:version => 20120717210652) do
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.integer  "capacity"
+  end
+
+  create_table "lineups", :force => true do |t|
+    t.integer  "boat_id"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "practice_lineups", :force => true do |t|
+    t.integer  "practice_id"
+    t.integer  "lineup_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "practices", :force => true do |t|
+    t.string   "name"
+    t.integer  "workout_type_id"
+    t.string   "location"
+    t.datetime "date"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "race_lineups", :force => true do |t|
+    t.integer  "race_id"
+    t.integer  "lineup_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "races", :force => true do |t|
+    t.string   "name"
+    t.text     "location"
+    t.datetime "date"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "roles", :force => true do |t|
@@ -55,6 +102,13 @@ ActiveRecord::Schema.define(:version => 20120717210652) do
     t.integer  "fundraiser_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+  end
+
+  create_table "user_lineups", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "lineup_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "user_roles", :force => true do |t|
@@ -91,5 +145,12 @@ ActiveRecord::Schema.define(:version => 20120717210652) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "workout_types", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
 end
