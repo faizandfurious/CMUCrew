@@ -1,16 +1,10 @@
-<<<<<<< HEAD
+
 CMUCrewWebsite::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
-=======
-CMUCrew::Application.configure do
-  # Settings specified here will take precedence over those in config/application.rb
 
-  # In the development environment your application's code is reloaded on
-  # every request.  This slows down response time but is perfect for development
->>>>>>> 40ff0f14b3a0b3c355693cbac787ebe8a1079e84
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
@@ -30,7 +24,7 @@ CMUCrew::Application.configure do
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
 
-<<<<<<< HEAD
+
   # Raise exception on mass assignment protection for Active Record models
   config.active_record.mass_assignment_sanitizer = :strict
 
@@ -38,8 +32,6 @@ CMUCrew::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-=======
->>>>>>> 40ff0f14b3a0b3c355693cbac787ebe8a1079e84
   # Do not compress assets
   config.assets.compress = false
 

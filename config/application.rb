@@ -1,16 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
-<<<<<<< HEAD
 require 'rails/all'
-=======
-# Pick the frameworks you want:
-require "active_record/railtie"
-require "action_controller/railtie"
-require "action_mailer/railtie"
-require "active_resource/railtie"
-# require "sprockets/railtie"
-require "rails/test_unit/railtie"
->>>>>>> 40ff0f14b3a0b3c355693cbac787ebe8a1079e84
+
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -19,11 +10,9 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-<<<<<<< HEAD
+
 module CMUCrewWebsite
-=======
-module CMUCrew
->>>>>>> 40ff0f14b3a0b3c355693cbac787ebe8a1079e84
+
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -53,7 +42,6 @@ module CMUCrew
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 
-<<<<<<< HEAD
     # Use SQL instead of Active Record's schema dumper when creating the database.
     # This is necessary if your schema can't be completely dumped by the schema dumper,
     # like if you have constraints or database-specific column types
@@ -70,7 +58,5 @@ module CMUCrew
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
-=======
->>>>>>> 40ff0f14b3a0b3c355693cbac787ebe8a1079e84
   end
 end

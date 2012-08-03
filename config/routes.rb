@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 CMUCrewWebsite::Application.routes.draw do
 
   resources :races
@@ -36,9 +35,7 @@ CMUCrewWebsite::Application.routes.draw do
   resources :fundraisers
   resources :home
 
-=======
-CMUCrew::Application.routes.draw do
->>>>>>> 40ff0f14b3a0b3c355693cbac787ebe8a1079e84
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -88,19 +85,14 @@ CMUCrew::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-<<<<<<< HEAD
+
    root :to => 'home#index'
-=======
-  # root :to => 'welcome#index'
->>>>>>> 40ff0f14b3a0b3c355693cbac787ebe8a1079e84
+
 
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-<<<<<<< HEAD
+
   # match ':controller(/:action(/:id))(.:format)'
-=======
-  # match ':controller(/:action(/:id(.:format)))'
->>>>>>> 40ff0f14b3a0b3c355693cbac787ebe8a1079e84
 end
