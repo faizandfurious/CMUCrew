@@ -1,25 +1,21 @@
 <h1>Listing boats</h1>
 
-<table>
+<table class="table table-striped table-bordered">
   <tr>
     <th>Name</th>
     <th>Boat type</th>
     <th>Color</th>
     <th>Model</th>
-    <th></th>
-    <th></th>
-    <th></th>
+
   </tr>
 
 <% @boats.each do |boat| %>
   <tr>
     <td><%= boat.name %></td>
-    <td><%= boat.boat_type_id %></td>
+    <td><%= boat.boat_type %></td>
     <td><%= boat.color %></td>
     <td><%= boat.model %></td>
-    <td><%= link_to 'Show', boat %></td>
-    <td><%= link_to 'Edit', edit_boat_path(boat) %></td>
-    <td><%= link_to 'Destroy', boat, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Show', boat %> <%= link_to 'Edit', edit_boat_path(boat) %> <%= link_to 'Destroy', boat, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
