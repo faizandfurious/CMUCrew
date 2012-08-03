@@ -15,11 +15,11 @@ ActiveRecord::Schema.define(:version => 20120801195605) do
 
   create_table "boats", :force => true do |t|
     t.string   "name"
-    t.string   "boat_type_id"
+    t.string   "boat_type"
     t.string   "color"
     t.string   "model"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "fundraiser_types", :force => true do |t|
@@ -107,6 +107,7 @@ ActiveRecord::Schema.define(:version => 20120801195605) do
   create_table "user_lineups", :force => true do |t|
     t.integer  "user_id"
     t.integer  "lineup_id"
+    t.string   "seat"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

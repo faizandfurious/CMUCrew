@@ -1,12 +1,26 @@
-<%= simple_form_for(@lineup) do |f| %>
-  <%= f.error_notification %>
+<%= form_for @lineup, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> Lineup</legend>
 
-  <div class="form-inputs">
-    <%= f.input :boat_id %>
-    <%= f.input :name %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+    <div class="control-group">
+      <%= f.label :name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :name, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :boat_id, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.collection_select :boat_id, Boat.all, :id, :name, :prompt => 'Select...' %>
+      </div>
+    </div>
+
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', fundraisers_path, :class => 'btn' %>
+    </div>
+  </fieldset>
 <% end %>
