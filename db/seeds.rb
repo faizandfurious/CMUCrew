@@ -33,28 +33,28 @@ steelers = FundraiserType.find_or_create_by_name(name: 'Steelers Game')
 rentarower = FundraiserType.find_or_create_by_name(name: 'Rent-A-Rower')
 gwensgirls = FundraiserType.find_or_create_by_name(name: 'Gwens Girls')
 
-#Boats
+#Boat
 
 #Eights
-lyssyboo = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
-sectional = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
-elizabethwinter = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
-highleyrecommended = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
-abigailsimon = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+lyssyboo = Boat.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+sectional = Boat.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+elizabethwinter = Boat.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+highleyrecommended = Boat.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+abigailsimon = Boat.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
 #Fours
-whitev1 = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
-millikowski = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
-classof05 = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
-scooter = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
-prinz = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
-meatrack = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+whitev1 = Boat.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+millikowski = Boat.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+classof05 = Boat.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+scooter = Boat.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+prinz = Boat.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+meatrack = Boat.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
 #Pairs
-bearbetzler = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
-oliversung = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
-buttercup = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+bearbetzler = Boat.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+oliversung = Boat.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+buttercup = Boat.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
 #Doubles
-calbeardouble = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
-merkledouble = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+calbeardouble = Boat.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+merkledouble = Boat.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
 #Singles
-resistance = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
-millisingle = Boats.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+resistance = Boat.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
+millisingle = Boat.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
