@@ -1,19 +1,49 @@
+<% if user_signed_in? %>
 
-<div class="well">
-	<h1>Welcome to CMU Crew's Homepage!</h1>
-	
-	<div class= "general_info"></br>
-      <p>Located in Pittsburgh, PA Carnegie Mellon has fielded competitive men's
-      and women's crews since 1987. As member of American Collegiate Rowing
-      Association we compete in fall and spring races throughout the Northeast
-      and Mid Atlantic regions. Over the years we've been competitive at regattas 
-      such as Head of the Charles and Dad Vail Regatta.</p>
-    </div>
+<h1>Welcome Back, <%= current_user.first_name %>.</h1></br>
+
+<div class= "schedule">
+	<h3>Tomorrow's Schedule:</h3></br>
+	<div class="workout-description">
+		<p>Launch time is <strong>5:30am</strong>.</p>
+		<p>5x15 minute steady state row. Technical day.</p>
+	</div>
+	<div class="boat-assignment">
+		<ul class="boat-lineup">
+			<h3>Boat lineup</h3>
+			<li><strong>Coxswain </strong>Filipino Jones</li>				
+			<li><strong>Stroke Seat </strong>Joshua Harvey</li>
+			<li><strong>3 Seat </strong>Joe Guihan</li>
+			<li><strong>2 Seat </strong>Faiz Abbasi</li>
+			<li><strong>Bow Seat </strong>Wesley Transue</li>
+		</ul>
+		<p>You will be rowing the <strong>White V1</strong>.
+	</div>
 </div>
 
-<div class="well">
-	<h3>Home</h3>
-	<% @users.each do |user| %>
-	  <p>User: <%= user.first_name %> </p>
-	<% end %>
+
+<% else %>
+
+<h3>Welcome to the Carnegie Mellon University Rowing Club! </h3>
+<div class="info_section">
+	<p>
+		Located in Pittsburgh, PA Carnegie Mellon has fielded competitive men's
+		and women's crews since 1987. As member of American Collegiate Rowing
+		Association we compete in fall and spring races throughout the Northeast
+		and Mid Atlantic regions. Over the years we've been competitive at regattas 
+		such as Head of the Charles and Dad Vail Regatta.
+	</p>
+
+	<h3>Recent News</h3>
+
+	<p>
+		<h5>Tartan Crew is on Summer Break (but don't think we're on vacation)</h5></br>        
+		Our team is rigorously preparing for the upcoming Fall season. In fact we have some rowers still in Pittsburgh, rowing multiple times a week with the Three Rivers Rowing Assocations' Masters Men and Masters Women. We also have rowers practicing with prestigious crews out in Philadelphia. Our other members are in various parts of the country (and world!) preparing for the Fall.
+	</p>
+	<p>
+		And we're happy to announce that we have two members participating in the LiveSTRONG Challenge alongside several CMU Crew alumni in Philadelphia.
+	</p>
 </div>
+
+
+<% end %>

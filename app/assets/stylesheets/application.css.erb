@@ -1,0 +1,109 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+
+html{
+}
+
+body{
+	background-image:url(<%=asset_path "tempbackground.jpeg"%>); 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	padding-top:60px;
+	background-attachment: fixed;
+}
+
+ul.hmenu {
+  list-style: none;	
+  margin: 0 0 2em;
+  padding: 0;
+}
+
+ul.hmenu li {
+  display: inline;  
+}
+
+ul.navibar {
+	text-decoration:none;
+	list-style:none;
+	width:100%;
+}
+ul.navibar li{
+	color:white;
+	font-size:16px;
+  	float: left;
+  	text-align: center;
+  	width: 24%;
+	padding-top:20px;
+	background:none;
+	text-decoration:none;
+}
+
+.crest-header{
+	height:6em;
+	background-image:url(<%=asset_path "plaid.png"%>);
+	background-repeat:repeat-x;
+	margin-bottom:4em;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.home-button{
+	background:none;
+	margin-top:-3em;
+}
+
+a:hover{
+	border: none;
+	text-decoration:none;
+}
+
+
+.main-content{
+	background-color: white;
+	margin-bottom:4em;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.weather{
+	height:6em;
+	background: rgba(125, 173, 27, 0.9);
+	color:whitesmoke;
+}
+.weather-icon{
+	position:relative;
+	margin-left:14em;
+	margin-top:-8em;
+}
+.fundraising{
+	background-color:#39e24d;
+	color:whitesmoke;
+}
+
+.well{
+	background-color:white;
+}
+.boat-lineup {
+  list-style: none;	
+  margin: 0 0 2em;
+  padding: 0;
+}
+
+.boat-lineup li {
+  text-decoration:none;
+  padding-left:5px;
+}
+
+

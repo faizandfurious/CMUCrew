@@ -22,55 +22,89 @@
   </head>
   <body>
 
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-          <div class="container">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="/">CMU Crew</a>
-          
-            <ul class="nav">
-                <li><%= link_to "Rowers", rowers_path  %></li>
-                <li><%= link_to "Fundraisers", fundraisers_path  %></li>
-                <li><%= link_to "User Fundraisers", user_fundraisers_path  %></li>
-                <li><%= link_to "Fundraiser Types", fundraiser_types_path  %></li>
-            </ul>
-			<ul class="pull-right hmenu">
-				<%= render 'devise/menu/registration_items' %>
-			  	<%= render 'devise/menu/login_items' %>
-			</ul>
-				
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
+
 
     <div class="container">
       <div class="content">
+		<div class="row">
+			<div class="span12">
+			</div>
+		</div>
         <div class="row">
+			<div class="span12 title">
+				<p><strong>Carnegie Mellon Crew</strong><p>
+			</div>
+			<div class="span12 login">
+				<ul class="hmenu">
+  					<%= render 'devise/menu/registration_items' %>
+  					<%= render 'devise/menu/login_items' %>
+				</ul>
+			</div>
+		   <div class="span12 crest-header">
+		   	<div class="row">
+				<div class="span2 home-button">
+					<%= link_to image_tag("crest.png", :size => "100x131", :alt => "CMU Crew"), "/", :title => 'CMU Crew' %>
+				</div>
+				<div class="span10">
+					<ul class="navibar">
+						<li><%= link_to image_tag("schedule.png", :alt => "Schedule"), practices_path %></li>
+						<li><%= link_to image_tag("fundraising.png", :alt => "Fundraising"), fundraisers_path %></li>
+						<li><%= link_to image_tag("races.png", :alt => "Races and Regattas"), races_path %></li>
+						<li><%= link_to image_tag("coaches.png", :alt => "Coaches Quarters"), workout_types_path %></li>
+					</ul>
+				</div>
+			</div>
+		   </div><!-- End crest-header -->
+
+		</div>
+		<div class="row">
+			<% if user_signed_in? %>
+				<%= render 'home/notifications' %>
+			<% end %>
            <div class="span9">
+           	<div class="well main-content">
               <%= yield %>
-            </div>
-            <div class="span3">
-              <div class="well sidebar-nav">
-                <h3>Sidebar</h3>
-                <ul class="nav nav-list">
-                  <li class="nav-header">Sidebar</li>
-                <li><%= link_to "Rowers", rowers_path  %></li>
-                <li><%= link_to "Fundraisers", fundraisers_path  %></li>
-                <li><%= link_to "User Fundraisers", user_fundraisers_path  %></li>
-                <li><%= link_to "Fundraiser Types", fundraiser_types_path  %></li>
-                </ul>
-              </div><!--/.well -->
+          	</div>
+
+           </div>
+           <div class="span3">
+           	<% if user_signed_in? %>
+            	<div class="well weather">
+					<h4>Weather Report</h4></br>
+					<p>Mostly sunny. Highs in the lower 80s. Northwest winds 5 to 10 mph with gusts up to 20 mph.</p>
+					<div class="weather-icon">
+						<%=image_tag("sun.png", :size => "35x35")%>
+					</div>
+            	</div><!--/.well weather-->
+            	<div class="well fundraising">
+					<h4>Fundraising Report</h4></br> 
+					<p>You have completed <strong>1</strong> of <strong>5</strong> required fundraising events.</p>
+					<!-- <% if @user_fundraisers %>
+						You are currently signed up for 
+					<% @user_fundraisers.each do |uf| %>
+						</br><%= uf.fundraiser.name %>
+					<% end %>
+				<% else %>
+					You don't have any upcoming fundraising events!
+				<% end %> -->
+           		</div><!--/.well fundraising-->
+           	<% else %>
+           		<div class = "well recruitment">
+           			<h4>Interested in Rowing?</h4></br>
+			        <p>We are looking for both experienced and new rowers and coxswains to start this fall. The only requirements
+			        for joining our team are a competitive personality and willingness to work hard.</br></br>
+			        <a href="recruitment.html"><%= mail_to "captains@tartancrew.org", "I'm Interested" %></a>
+			        </p>
+           		</div>
+           	<% end %>
+
+
             </div><!--/span-->
         </div><!--/row-->
       </div><!--/content-->
 
       <footer>
-        <p>&copy; Company 2012</p>
+        
       </footer>
 
     </div> <!-- /container -->

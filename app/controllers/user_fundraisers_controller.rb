@@ -1,4 +1,5 @@
 class UserFundraisersController < ApplicationController
+  before_filter :authenticate_user!
 
   # GET /user_fundraisers
   # GET /user_fundraisers.json
@@ -42,6 +43,11 @@ class UserFundraisersController < ApplicationController
   # POST /user_fundraisers.json
   def create
     @user_fundraiser = UserFundraiser.new(params[:user_fundraiser])
+
+    unless(params[:user_id].nil?)
+      @user_fundraiser.user_id = params[:user_id]
+      @user_fundraiser.fundraiser_id = params[:fundraiser_id]
+    end
 
     respond_to do |format|
       if @user_fundraiser.save

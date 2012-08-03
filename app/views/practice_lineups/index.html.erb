@@ -1,0 +1,25 @@
+<h1>Listing practice_lineups</h1>
+
+<table>
+  <tr>
+    <th>Practice</th>
+    <th>Lineup</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @practice_lineups.each do |practice_lineup| %>
+  <tr>
+    <td><%= practice_lineup.practice_id %></td>
+    <td><%= practice_lineup.lineup_id %></td>
+    <td><%= link_to 'Show', practice_lineup %></td>
+    <td><%= link_to 'Edit', edit_practice_lineup_path(practice_lineup) %></td>
+    <td><%= link_to 'Destroy', practice_lineup, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Practice lineup', new_practice_lineup_path %>

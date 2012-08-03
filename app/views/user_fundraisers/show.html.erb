@@ -1,13 +1,7 @@
-<h1>User Fundraiser</h1>
+<h2>Sign Up Confirmation</h2></br>
 
 <p>
-  <b>User</b><br>
-  <%= @user_fundraiser.user_id %>
-</p>
-
-<p>
-  <b>Fundraiser</b><br>
-  <%= @user_fundraiser.fundraiser_id %>
+You are signed up for the <b><%= @user_fundraiser.fundraiser.name %></b> fundraising event. The event is scheduled to take place on <b><%= @user_fundraiser.fundraiser.event_date %></b>.
 </p>
 
 <div class="form-actions">

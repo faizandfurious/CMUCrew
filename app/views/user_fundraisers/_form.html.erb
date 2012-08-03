@@ -1,7 +1,9 @@
 <%= form_for @user_fundraiser, :html => { :class => 'form-horizontal' } do |f| %>
   <fieldset>
     <legend><%= controller.action_name.capitalize %> /User Fundraiser</legend>
-
+  <% @user_fundraiser.errors.full_messages.each do |msg| %>
+  <p><%= msg %></p>
+  <% end %>
     <div class="control-group">
       <%= f.label :user_id, :class => 'control-label' %>
       <div class="controls">

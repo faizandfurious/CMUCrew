@@ -1,5 +1,5 @@
 class FundraiserTypesController < ApplicationController
- 
+  before_filter :authenticate_user!
   # GET /fundraiser_types
   # GET /fundraiser_types.json
   def index

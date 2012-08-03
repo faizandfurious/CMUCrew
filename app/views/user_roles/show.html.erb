@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @user_role.user_id %>
+</p>
+
+<p>
+  <b>Role:</b>
+  <%= @user_role.role_id %>
+</p>
+
+<% if can? :update, @user_role %>
+	<%= link_to 'Edit', edit_user_role_path(@user_role) %> |
+	<%= link_to 'Back', user_roles_path %>
+<%end%>

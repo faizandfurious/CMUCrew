@@ -1,19 +1,35 @@
 <<<<<<< HEAD
 CMUCrewWebsite::Application.routes.draw do
+
+  resources :races
+
+  resources :race_lineups
+
+  resources :workout_types
+
+  resources :practices
+
+  resources :practice_lineups
+
+  resources :boats
+
+  resources :user_lineups
+
+  resources :lineups
+
+  resources :user_roles
+
+  resources :roles
+
   resources :rowers
 
-  devise_for :users do  
-    get "/edit" => "devise/registrations#edit"
-    match '/edit', :to => 'devise/registrations#edit'   
-    get "/login" => "devise/sessions#new"
-    match '/login', :to => 'devise/sessions#new'
-    get "/logout" => "devise/sessions#destroy"
-    match '/logout', :to => 'devise/sessions#destroy'
-  end
+  devise_for :users
+  resources :users, :controller => 'user'
 
   resources :fundraiser_types
 
-  get "home/index"
+  match "/home/index" => "home#index", :via => [:get]
+  match "/user" => "user#index"
 
   
   resources :user_fundraisers  

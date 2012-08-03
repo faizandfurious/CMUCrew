@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @user_lineup.user_id %>
+</p>
+
+<p>
+  <b>Lineup:</b>
+  <%= @user_lineup.lineup_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_lineup_path(@user_lineup) %> |
+<%= link_to 'Back', user_lineups_path %>

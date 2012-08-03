@@ -1,13 +1,13 @@
 
 source 'https://rubygems.org'
 gem 'rails', '3.2.2'
-gem 'sqlite3'
+gem 'pg'
+gem 'twitter-bootstrap-rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
-  gem 'twitter-bootstrap-rails'
 end
 
 gem 'jquery-rails'
@@ -19,4 +19,7 @@ gem "capybara", ">= 1.1.2", :group => :test
 gem "database_cleaner", ">= 0.7.1", :group => :test
 gem "launchy", ">= 2.0.5", :group => :test
 gem "devise", ">= 2.0.4"
+
+gem "cancan"
+gem 'simple_form'
 

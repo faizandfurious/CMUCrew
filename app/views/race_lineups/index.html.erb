@@ -1,0 +1,25 @@
+<h1>Listing race_lineups</h1>
+
+<table>
+  <tr>
+    <th>Race</th>
+    <th>Lineup</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @race_lineups.each do |race_lineup| %>
+  <tr>
+    <td><%= race_lineup.race_id %></td>
+    <td><%= race_lineup.lineup_id %></td>
+    <td><%= link_to 'Show', race_lineup %></td>
+    <td><%= link_to 'Edit', edit_race_lineup_path(race_lineup) %></td>
+    <td><%= link_to 'Destroy', race_lineup, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Race lineup', new_race_lineup_path %>
