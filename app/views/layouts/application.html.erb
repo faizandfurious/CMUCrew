@@ -21,42 +21,26 @@
     <link href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
   </head>
   <body>
+ 	<div class="nav-wrapper">
 
-
-
-    <div class="container">
-      <div class="content">
-		<div class="row">
-			<div class="span12">
-			</div>
-		</div>
-        <div class="row">
-			<div class="span12 title">
-				<p><strong>Carnegie Mellon Crew</strong><p>
-			</div>
-			<div class="span12 login">
-				<ul class="hmenu">
-  					<%= render 'devise/menu/registration_items' %>
-  					<%= render 'devise/menu/login_items' %>
-				</ul>
-			</div>
-		   <div class="span12 crest-header">
-		   	<div class="row">
-				<div class="span2 home-button">
-					<%= link_to image_tag("crest.png", :size => "100x131", :alt => "CMU Crew"), "/", :title => 'CMU Crew' %>
-				</div>
-				<div class="span10">
-					<ul class="navibar">
-						<li><%= link_to image_tag("schedule.png", :alt => "Schedule"), practices_path %></li>
-						<li><%= link_to image_tag("fundraising.png", :alt => "Fundraising"), fundraisers_path %></li>
-						<li><%= link_to image_tag("races.png", :alt => "Races and Regattas"), races_path %></li>
-						<li><%= link_to image_tag("coaches.png", :alt => "Coaches Quarters"), workout_types_path %></li>
+	   <div class="container">
+	 		<div class="row">
+				<div class="span12 navigation">
+					<h1 class="title"><%= link_to "Carnegie Mellon Crew", root_path, :class => "title" %></h1>
+					<ul class="nav nav-pills nav-custom">
+						<li><%= link_to "Practices", practices_path %></li>
+						<li><%= link_to "Fundraising", fundraisers_path %></li>
+						<li><%= link_to "Races and Regattas", races_path %></li>
+						<li><%= link_to "Coaches Quarters", workout_types_path %></li>
+					 	<%= render 'devise/menu/registration_items' %>
+	  					<%= render 'devise/menu/login_items' %>
 					</ul>
 				</div>
 			</div>
-		   </div><!-- End crest-header -->
+		</div>	
+	</div>
 
-		</div>
+	<div class="container">
 		<div class="row">
 			<% if user_signed_in? %>
 				<%= render 'home/notifications' %>
@@ -99,7 +83,7 @@
            		<div class = "well alumni">
            			<h4>Our Alumni</h4></br>
 			        <p>We've been lucky to have a large and active alumni association. </br></br>
-			        <a href="http://tcan.org">Find Them Here</a>
+			        <a href="http://alumni.cmu.edu/s/1410/alumni/index.aspx?sid=1410&gid=1&pgid=525">Find Them Here</a>
 			        </p>
            		</div>
            	<% end %>
