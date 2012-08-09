@@ -19,7 +19,7 @@ gem "capybara", ">= 1.1.2", :group => :test
 gem "database_cleaner", ">= 0.7.1", :group => :test
 gem "launchy", ">= 2.0.5", :group => :test
 gem "devise", ">= 2.0.4"
-
+gem "high_voltage"
 gem "cancan"
 gem 'simple_form'
 

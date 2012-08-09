@@ -80,6 +80,7 @@ GEM
     ffi (1.1.0)
     gherkin (2.11.1)
       json (>= 1.4.6)
+    high_voltage (1.1.1)
     hike (1.2.1)
     i18n (0.6.0)
     journey (1.0.4)
@@ -196,6 +197,7 @@ DEPENDENCIES
   devise (>= 2.0.4)
   email_spec (>= 1.2.1)
   factory_girl_rails (>= 1.7.0)
+  high_voltage
   jquery-rails
   launchy (>= 2.0.5)
   pg
