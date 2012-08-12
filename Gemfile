@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.2'
 gem 'pg'
 gem 'twitter-bootstrap-rails'
+gem 'bootstrap-datepicker-rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

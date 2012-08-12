@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require bootstrap-datepicker
  *= require_tree .
 */
 
@@ -19,6 +20,10 @@ a.navlink{
 	color:#d8d9da;
 }
 
+a.navlink2{
+	color:black;
+}
+
 body{
 	background-image:url(<%=asset_path "tempbackground.jpeg"%>); 
 	-webkit-background-size: cover;
@@ -26,6 +31,11 @@ body{
 	-o-background-size: cover;
 	background-size: cover;
 	background-attachment: fixed;
+}
+
+.email{
+	font-style:italic;
+	color:#7dad1b;
 }
 
 ul.hmenu {
@@ -96,5 +106,6 @@ a:hover{
   text-decoration:none;
   padding-left:5px;
 }
+
 
 

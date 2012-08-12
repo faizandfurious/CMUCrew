@@ -26,8 +26,10 @@
 	   <div class="container">
 	 		<div class="row">
 				<div class="span12 navigation">
-					<h1 class="title"><%= link_to "Carnegie Mellon Crew", root_path, :class => "title" %></h1>
-					<ul class="nav nav-pills nav-custom">
+					<ul class="nav-left">
+            <li><%= link_to "Carnegie Mellon Crew", root_path, :class => "title" %></li>
+          </ul>
+          <ul class="nav nav-pills nav-custom">
             <%= render 'layouts/navigation' %>
 					 	<%= render 'devise/menu/registration_items' %>
 	  				<%= render 'devise/menu/login_items' %>

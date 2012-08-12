@@ -2,19 +2,15 @@
 	<li><%= link_to "Practices", practices_path, :class => "navlink" %></li>
 	<li><%= link_to "Fundraising", fundraisers_path, :class => "navlink" %></li>
 	<li><%= link_to "Races", races_path, :class => "navlink" %></li>
-		<li><%= link_to "Boats", boats_path, :class => "navlink" %></li>
 	<li><%= link_to "Lineups", lineups_path, :class => "navlink" %></li>
-	<li><%= link_to "Practice Lineups", practice_lineups_path, :class => "navlink" %></li>
-	<li><%= link_to "Race Lineups", race_lineups_path, :class => "navlink" %></li>
-		<li><%= link_to "Rowers", rowers_path, :class => "navlink" %></li>
-	<li><%= link_to "Workout Types", workout_types_path, :class => "navlink" %></li>
+	<li><%= link_to "Coaches Area", page_path('coaches_area'), :class => "navlink" %></li>
 <% else %>
 	<li><%= link_to "Practices", page_path('practices'), :class => "navlink" %></li>
 	<li><%= link_to "Fundraising", page_path('fundraising'), :class => "navlink" %></li>
 	<li><%= link_to "Races and Regattas", page_path('regattas'), :class => "navlink" %></li>
-	<li><%= link_to "Coaches Quarters", page_path('coaches'), :class => "navlink" %></li><!-- 
-	<li><%= link_to "Roster", page_path('roster'), :class => "navlink" %></li> -->
+	<li><%= link_to "Coaches Quarters", page_path('coaches'), :class => "navlink" %></li>
+	<li><%= link_to "Roster", page_path('roster'), :class => "navlink" %></li>
 	<li><%= link_to "History", page_path('history'), :class => "navlink" %></li>
-	<li><%= link_to "Photos", page_path('photos'), :class => "navlink" %></li>
+	<!-- <li><%= link_to "Photos", page_path('photos'), :class => "navlink" %></li> -->
 	<li><%= link_to "Alumni", page_path('alumni'), :class => "navlink" %></li>
 <% end %>
