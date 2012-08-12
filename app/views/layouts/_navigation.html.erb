@@ -1,8 +1,13 @@
 <% if user_signed_in? %>
 	<li><%= link_to "Practices", practices_path, :class => "navlink" %></li>
 	<li><%= link_to "Fundraising", fundraisers_path, :class => "navlink" %></li>
-	<li><%= link_to "Races and Regattas", races_path, :class => "navlink" %></li>
-	<li><%= link_to "Coaches Quarters", workout_types_path, :class => "navlink" %></li>
+	<li><%= link_to "Races", races_path, :class => "navlink" %></li>
+		<li><%= link_to "Boats", boats_path, :class => "navlink" %></li>
+	<li><%= link_to "Lineups", lineups_path, :class => "navlink" %></li>
+	<li><%= link_to "Practice Lineups", practice_lineups_path, :class => "navlink" %></li>
+	<li><%= link_to "Race Lineups", race_lineups_path, :class => "navlink" %></li>
+		<li><%= link_to "Rowers", rowers_path, :class => "navlink" %></li>
+	<li><%= link_to "Workout Types", workout_types_path, :class => "navlink" %></li>
 <% else %>
 	<li><%= link_to "Practices", page_path('practices'), :class => "navlink" %></li>
 	<li><%= link_to "Fundraising", page_path('fundraising'), :class => "navlink" %></li>
