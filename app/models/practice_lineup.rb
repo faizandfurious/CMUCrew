@@ -1,7 +1,8 @@
 class PracticeLineup < ActiveRecord::Base
 	#Relationships
     # -----------------------------
-	belongs_to :practices, :lineups
+	belongs_to :practice
+	belongs_to :lineup
 
 	#Scopes
     # -----------------------------
