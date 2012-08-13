@@ -35,7 +35,8 @@ steelers = FundraiserType.find_or_create_by_name(name: 'Steelers Game')
 rentarower = FundraiserType.find_or_create_by_name(name: 'Rent-A-Rower')
 gwensgirls = FundraiserType.find_or_create_by_name(name: 'Gwens Girls')
 
-#Boat
+
+#Boats
 
 #Eights
 lyssyboo = Boat.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")

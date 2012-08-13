@@ -1,13 +1,31 @@
-<%= simple_form_for(@practice) do |f| %>
-  <%= f.error_notification %>
+<%= form_for @practice, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> Practice</legend>
 
-  <div class="form-inputs">
-    <%= f.input :date, :as => :date %>
-    <%= f.association :workout_type_id %>
-    <%= f.input :location %>
-  </div>
+    <div class="control-group">
+      <%= f.label :date, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :date, :class => 'text_field datepicker' %>
+      </div>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+    <div class="control-group">
+      <%= f.label :workout_type_id, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.collection_select :workout_type_id, WorkoutType.all, :id, :name, :prompt => 'Select...' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+    	<%= f.label :location, :class => 'control-label' %>
+    	<div class="controls">
+    		<%= f.select :location, Practice::LOCATIONS, :prompt => 'Select...' %>
+    	</div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', fundraisers_path, :class => 'btn' %>
+    </div>
+  </fieldset>
 <% end %>

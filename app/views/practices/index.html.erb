@@ -2,7 +2,7 @@
 
 <h1>Listing practices</h1>
 
-<table>
+<table class="table table-bordered table-striped">
   <tr>
     <th>Date</th>
     <th>Workout type</th>
@@ -15,7 +15,7 @@
 <% @practices.each do |practice| %>
   <tr>
     <td><%= practice.date %></td>
-    <td><%= practice.workout_type_id %></td>
+    <td><%= practice.workout_type.name %></td>
     <td><%= practice.location %></td>
     <td><%= link_to 'Show', practice %></td>
     <td><%= link_to 'Edit', edit_practice_path(practice) %></td>
