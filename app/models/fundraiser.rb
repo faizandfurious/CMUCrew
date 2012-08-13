@@ -5,9 +5,10 @@ class Fundraiser < ActiveRecord::Base
   belongs_to :fundraiser_type
   has_many :users, :through => :user_fundraisers, :uniq => true
   
-  #Constants
-
-  TOTAL_REQUIRED = 5
   #Scopes
+
+  #Constants
+  TOTAL_REQUIRED = 5
+
 
 end

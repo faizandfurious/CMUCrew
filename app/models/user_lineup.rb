@@ -5,6 +5,8 @@ class UserLineup < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :lineup
 
+	#Scopes
+	
 	#Constants
 	SEATS = {'0' => 'Coxswain', '1' => 'One Seat', '2' => 'Two Seat',  '3' => 'Three Seat', '4' => 'Four Seat', '5' => 'Five Seat', '6' => 'Six Seat', '7' => 'Seven Seat', '8' => 'Eight Seat' }
 

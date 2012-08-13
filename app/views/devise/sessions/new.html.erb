@@ -3,14 +3,13 @@
   <strong>Notice:</strong> This functionality is not yet available! Check back soon.
 </div> -->
 
-<h2>Sign in</h2>
+<h3>Sign in</h3>
 
+<p>
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+  <div><%= f.email_field :email, :placeholder => 'tartan@crew.com' %></div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+  <div><%= f.password_field :password, :placeholder => 'password' %></div>
 
 
   <% if devise_mapping.rememberable? -%>
@@ -19,5 +18,6 @@
 
   <div><%= f.submit "Sign in" %></div>
 <% end %>
+</p>
 
 <%= render "links" %>

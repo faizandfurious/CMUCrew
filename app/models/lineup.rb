@@ -5,6 +5,8 @@ class Lineup < ActiveRecord::Base
 	belongs_to :boat
 	has_many :users, :through => :user_lineups
 
+	#Scopes
+
 	#Constants
 
 
