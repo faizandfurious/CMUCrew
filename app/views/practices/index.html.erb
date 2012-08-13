@@ -4,10 +4,9 @@
 
 <table>
   <tr>
-    <th>Name</th>
+    <th>Date</th>
     <th>Workout type</th>
     <th>Location</th>
-    <th>Date</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,10 +14,9 @@
 
 <% @practices.each do |practice| %>
   <tr>
-    <td><%= practice.name %></td>
+    <td><%= practice.date %></td>
     <td><%= practice.workout_type_id %></td>
     <td><%= practice.location %></td>
-    <td><%= practice.date %></td>
     <td><%= link_to 'Show', practice %></td>
     <td><%= link_to 'Edit', edit_practice_path(practice) %></td>
     <td><%= link_to 'Destroy', practice, confirm: 'Are you sure?', method: :delete %></td>

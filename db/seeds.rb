@@ -60,4 +60,3 @@ merkledouble = Boat.find_or_create_by_name(name:"", boat_type:"", color:"", mode
 #Singles
 resistance = Boat.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
 millisingle = Boat.find_or_create_by_name(name:"", boat_type:"", color:"", model:"")
->>>>>>> master
