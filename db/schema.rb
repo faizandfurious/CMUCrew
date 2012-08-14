@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(:version => 20120801195605) do
   end
 
   create_table "practices", :force => true do |t|
-    t.datetime "date"
+    t.date     "date"
     t.time     "time"
     t.integer  "workout_type_id"
     t.string   "location"

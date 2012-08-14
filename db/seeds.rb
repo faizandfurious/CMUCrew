@@ -14,6 +14,11 @@ admin = Role.find_or_create_by_name({name: 'Admin'})
 faiz = User.find_or_create_by_email(email: 'fabbasi@andrew.cmu.edu', first_name: 'Faiz', last_name: 'Abbasi', password: 'admin1', password_confirmation: 'admin1')
 faiz_admin = UserRole.find_or_create_by_user_id(user_id:faiz.id, role_id:admin.id)
 
+#Workout Types
+cardio = WorkoutType.find_or_create_by_name(name: 'Cardio')
+steadystate = WorkoutType.find_or_create_by_name(name: 'Steady State')
+
+
 #Fundraisers
 fundraiser = Role.find_or_create_by_name({name: 'Fundraiser'})
 kelsey = User.find_or_create_by_email(email: 'kdiffley@andrew.cmu.edu', first_name: 'Kelsey', last_name: 'Diffley', password: 'password', password_confirmation: 'password')
