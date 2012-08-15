@@ -11,16 +11,24 @@
     </div>
 
     <div class="control-group">
+      <%= f.label :boat_size, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select :boat_size, Boat::SIZES, :prompt => 'Select...' %>
+      </div>
+    </div>
+
+    <div class="control-group">
       <%= f.label :boat_id, :class => 'control-label' %>
       <div class="controls">
         <%= f.collection_select :boat_id, Boat.all, :id, :name, :prompt => 'Select...' %>
       </div>
     </div>
 
+    <div><%= @lineup.size(@lineup) %></div>
 
     <div class="form-actions">
       <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to 'Cancel', fundraisers_path, :class => 'btn' %>
+      <%= link_to 'Cancel', lineups_path, :class => 'btn' %>
     </div>
   </fieldset>
 <% end %>

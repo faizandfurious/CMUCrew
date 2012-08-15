@@ -1,5 +1,5 @@
 class Lineup < ActiveRecord::Base
-	attr_accessible :boat_id, :name
+	attr_accessible :boat_id, :boat_size, :name
 
 	#Relationships
 	belongs_to :boat
@@ -9,6 +9,17 @@ class Lineup < ActiveRecord::Base
 
 	#Constants
 
+	#Methods
+
+	def boatsize
+		return self.boat.name
+	end
+
+	def size(params)
+		if(params.boat)
+        	return params.boat.boat_type
+        end
+    end
 
 
 end

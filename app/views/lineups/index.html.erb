@@ -4,6 +4,7 @@
   <tr>
     <th>Boat</th>
     <th>Name</th>
+    <th>Boat Size</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,6 +14,7 @@
   <tr>
     <td><%= lineup.boat_id %></td>
     <td><%= lineup.name %></td>
+    <td><%= lineup.boatsize %></td>
     <td><%= link_to 'Show', lineup %></td>
     <td><%= link_to 'Edit', edit_lineup_path(lineup) %></td>
     <td><%= link_to 'Destroy', lineup, confirm: 'Are you sure?', method: :delete %></td>
