@@ -11,6 +11,13 @@
     </div>
 
     <div class="control-group">
+      <%= f.label :time, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select :time, Practice::TIMES, :prompt => 'Select...'%>
+      </div>
+    </div>
+
+    <div class="control-group">
       <%= f.label :workout_type_id, :class => 'control-label' %>
       <div class="controls">
         <%= f.collection_select :workout_type_id, WorkoutType.all, :id, :name, :prompt => 'Select...' %>

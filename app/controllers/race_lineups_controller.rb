@@ -1,4 +1,5 @@
 class RaceLineupsController < ApplicationController
+  before_filter :authenticate_user!
   # GET /race_lineups
   # GET /race_lineups.json
   def index

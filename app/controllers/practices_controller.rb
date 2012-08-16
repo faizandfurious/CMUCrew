@@ -1,4 +1,5 @@
 class PracticesController < ApplicationController
+  before_filter :authenticate_user!
   # GET /practices
   # GET /practices.json
   def index

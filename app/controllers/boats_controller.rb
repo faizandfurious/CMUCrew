@@ -1,4 +1,5 @@
 class BoatsController < ApplicationController
+  before_filter :authenticate_user!
   # GET /boats
   # GET /boats.json
   def index

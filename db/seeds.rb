@@ -14,18 +14,6 @@ admin = Role.find_or_create_by_name({name: 'Admin'})
 faiz = User.find_or_create_by_email(email: 'fabbasi@andrew.cmu.edu', first_name: 'Faiz', last_name: 'Abbasi', password: 'admin1', password_confirmation: 'admin1')
 faiz_admin = UserRole.find_or_create_by_user_id(user_id:faiz.id, role_id:admin.id)
 
-#Workout Types
-cardio = WorkoutType.find_or_create_by_name(name: 'Cardio')
-steadystate = WorkoutType.find_or_create_by_name(name: 'Steady State')
-
-
-#Fundraisers
-fundraiser = Role.find_or_create_by_name({name: 'Fundraiser'})
-kelsey = User.find_or_create_by_email(email: 'kdiffley@andrew.cmu.edu', first_name: 'Kelsey', last_name: 'Diffley', password: 'password', password_confirmation: 'password')
-jinie = User.find_or_create_by_email(email: 'jinie@andrew.cmu.edu', first_name: 'Jinie', last_name: 'Haytko', password: 'password', password_confirmation: 'password')
-kelsey_fundraiser = UserRole.find_or_create_by_user_id(user_id: kelsey.id, role_id: fundraiser.id)
-jinie_fundraiser = UserRole.find_or_create_by_user_id(user_id: jinie.id, role_id: fundraiser.id)
-
 #Coach
 coach = Role.find_or_create_by_name({name: 'Coach'})
 alyssa = User.find_or_create_by_email(email:'alyssa@andrew.cmu.edu', first_name: 'Alyssa', last_name: 'Fogel', password: 'password', password_confirmation: 'password')
@@ -35,10 +23,31 @@ alyssa_coach = UserRole.find_or_create_by_user_id(user_id: alyssa.id, role_id: c
 wesley = User.find_or_create_by_email(email:'wesley@andrew.cmu.edu', first_name: 'Wesley', last_name: 'Transue', password: 'password', password_confirmation: 'password')
 
 
+#Rowers
+
+rfaiz = Rower.find_or_create_by_first_name(first_name:'Faiz', last_name: 'Abbasi', weight: '180', height: '6', rowing_side:'Port' )
+rkelsey = Rower.find_or_create_by_first_name(first_name:'Kelsey', last_name: 'Diffley', weight: '140', height: '5.2', rowing_side:'Port' )
+rwesley = Rower.find_or_create_by_first_name(first_name:'Wesley', last_name: 'Transue', weight: '180', height: '6', rowing_side:'Starboard' )
+
 #Fundraiser Types
 steelers = FundraiserType.find_or_create_by_name(name: 'Steelers Game')
 rentarower = FundraiserType.find_or_create_by_name(name: 'Rent-A-Rower')
 gwensgirls = FundraiserType.find_or_create_by_name(name: 'Gwens Girls')
+
+#Fundraisers
+fundraiser = Role.find_or_create_by_name({name: 'Fundraiser'})
+kelsey = User.find_or_create_by_email(email: 'kdiffley@andrew.cmu.edu', first_name: 'Kelsey', last_name: 'Diffley', password: 'password', password_confirmation: 'password')
+jinie = User.find_or_create_by_email(email: 'jinie@andrew.cmu.edu', first_name: 'Jinie', last_name: 'Haytko', password: 'password', password_confirmation: 'password')
+kelsey_fundraiser = UserRole.find_or_create_by_user_id(user_id: kelsey.id, role_id: fundraiser.id)
+jinie_fundraiser = UserRole.find_or_create_by_user_id(user_id: jinie.id, role_id: fundraiser.id)
+
+
+
+#Workout Types
+cardio = WorkoutType.find_or_create_by_name(name: 'Cardio')
+steadystate = WorkoutType.find_or_create_by_name(name: 'Steady State')
+lifting = WorkoutType.find_or_create_by_name(name: 'Lifting')
+sprint = WorkoutType.find_or_create_by_name(name: 'Sprint Work')
 
 
 #Boats

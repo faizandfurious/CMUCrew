@@ -1,5 +1,5 @@
 class RowersController < ApplicationController
-  before_filter :authenticate_user!, :except => 'index'
+  before_filter :authenticate_user!
   # GET /rowers
   # GET /rowers.json
   def index
