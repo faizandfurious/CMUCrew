@@ -25,7 +25,9 @@ TIMES = ["5:30am", "5:45am", "6:00am", "6:15am"]
 
 # Other methods
 # -----------------------------  
-
+def self.before8()
+  	return(Time.now > (Time.now.midnight + 8.hours))
+end
 
 
 end

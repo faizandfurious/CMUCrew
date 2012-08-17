@@ -2,7 +2,11 @@ class HomeController < ApplicationController
   before_filter :authenticate_user!, :except => 'index'
 
   def index
-  	@practices = Practice.all
+  	if(Practice.before8)
+  		@practice = Practice.tomorrow.first
+  	else
+  		@practice = Practice.tomorrow.second
+  	end
 
 
     respond_to do |format|
