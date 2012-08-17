@@ -10,3 +10,10 @@ $(document).ready(function () {
         }
     });
 });
+
+
+function getName(){
+    alert $("#lineup_boat_id").data('name')
+}
+
+alert $('#products').data('url')

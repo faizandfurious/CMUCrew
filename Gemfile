@@ -25,4 +25,4 @@ gem "devise", ">= 2.0.4"
 gem "high_voltage"
 gem "cancan"
 gem 'simple_form'
-
+gem 'gon'

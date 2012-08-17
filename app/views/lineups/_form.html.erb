@@ -13,15 +13,19 @@
     <div class="control-group">
       <%= f.label :boat_id, :class => 'control-label' %>
       <div class="controls">
-        <%= f.collection_select :boat_id, Boat.all, :id, :name, :prompt => 'Select...' %>
+        <%= f.collection_select :boat_id, Boat.all, :id, :name, :prompt => 'Select...', :id => 'boat_selection', data: {name: 'hey'} %>
       </div>
     </div>
-
+<%= content_tag "div", id: "products", data: {url: 'hel' } do %>
+  Loading products...
+<% end %>
     <div><%= @lineup.size(@lineup) %></div>
 
     <div class="form-actions">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to 'Cancel', lineups_path, :class => 'btn' %>
     </div>
+
+    <div class="example">Hello</div>
   </fieldset>
 <% end %>
