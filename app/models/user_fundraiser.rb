@@ -17,8 +17,9 @@ class UserFundraiser < ActiveRecord::Base
   
   # Scopes
   # -----------------------------
-  scope :current_user, where("user_id = ?", @current_user.id)
-    
+  scope :current_user, lambda { |user|
+    where("user_id = ?", user.id)
+  } 
 
     def self.completed(id_user)
       #Number in 0th position is tracker for completed fundraisers, 1st position is for future fundraisers

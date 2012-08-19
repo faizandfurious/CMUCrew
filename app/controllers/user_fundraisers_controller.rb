@@ -13,7 +13,7 @@ class UserFundraisersController < ApplicationController
   end
 
   def my_fundraisers
-    @user_fundraisers = UserFundraiser.current_user()
+    @user_fundraisers = UserFundraiser.current_user(current_user)
 
     respond_to do |format|
       format.html # index.html.erb
