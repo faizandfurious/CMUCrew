@@ -22,6 +22,8 @@ CMUCrewWebsite::Application.routes.draw do
 
   resources :rowers
 
+  match '/my_fundraisers' => 'user_fundraisers#my_fundraisers'
+
   devise_for :users
   resources :users, :controller => 'user'
 

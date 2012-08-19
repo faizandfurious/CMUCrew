@@ -34,6 +34,7 @@ steelers = FundraiserType.find_or_create_by_name(name: 'Steelers Game')
 rentarower = FundraiserType.find_or_create_by_name(name: 'Rent-A-Rower')
 gwensgirls = FundraiserType.find_or_create_by_name(name: 'Gwens Girls')
 
+
 #Fundraisers
 fundraiser = Role.find_or_create_by_name({name: 'Fundraiser'})
 kelsey = User.find_or_create_by_email(email: 'kdiffley@andrew.cmu.edu', first_name: 'Kelsey', last_name: 'Diffley', password: 'password', password_confirmation: 'password')

@@ -12,6 +12,15 @@ class UserFundraisersController < ApplicationController
     end
   end
 
+  def my_fundraisers
+    @user_fundraisers = UserFundraiser.current_user()
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @user_fundraisers }
+    end
+  end
+
   # GET /user_fundraisers/1
   # GET /user_fundraisers/1.json
   def show

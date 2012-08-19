@@ -1,0 +1,24 @@
+<h1>My Fundraisers</h1>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Fundraiser Name</th>
+      <th>Fundraiser Date</th>
+      <th>Location</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user_fundraisers.each do |user_fundraiser| %>
+      <tr>
+        <td><%= user_fundraiser.fundraiser.name %></td>
+        <td><%= user_fundraiser.fundraiser.event_date %></td>
+        <td><%= user_fundraiser.fundraiser.name %></td>
+        <td><%= user_fundraiser.fundraiser.name %></td>
+        <td>
+          <%= link_to 'Destroy', user_fundraiser_path(user_fundraiser), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
