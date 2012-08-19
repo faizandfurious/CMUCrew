@@ -1,5 +1,5 @@
 $(document).ready(function () {    
        $("#lineup_boat_id").bind("change", function () {
-         $(".example").text("You have selected a " + $(this).val());
+         $(".example").html("<%= escape_javascript(render( :partial => 'profile' )) %>");
     });
 });

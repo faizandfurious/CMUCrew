@@ -33,6 +33,14 @@ class LineupsController < ApplicationController
     end
   end
 
+  def four_lineup
+    @user_lineup1 = UserLineup.new
+    @user_lineup2 = UserLineup.new
+    @user_lineup3 = UserLineup.new
+    @user_lineup4 = UserLineup.new
+
+  end
+
   # GET /lineups/1/edit
   def edit
     @lineup = Lineup.find(params[:id])
