@@ -4,7 +4,8 @@ class Fundraiser < ActiveRecord::Base
     #Relationships
 	# -----------------------------  
     belongs_to :fundraiser_type
-    has_many :users, :through => :user_fundraisers, :uniq => true
+    has_many :user_fundraisers, :dependent => :destroy
+    has_many :users, :through => :user_fundraisers
   
     #Scopes
 	# -----------------------------  

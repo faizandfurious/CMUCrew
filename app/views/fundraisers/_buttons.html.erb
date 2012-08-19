@@ -1,7 +1,12 @@
 <% if current_user.is_fundraiser? %>
-  <%= link_to 'Edit', edit_fundraiser_path(fundraiser), :class => 'btn btn-mini' %>
-  <%= link_to 'Destroy', fundraiser_path(fundraiser), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
-  <%= button_to "Sign Up", { :action => "index", :controller => 'user_fundraisers', :user_id => current_user.id, :fundraiser_id => fundraiser.id }, :method => "create", :class => 'btn btn-mini' %> 
+<%= button_to "Sign Up", { :action => "index", :controller => 'user_fundraisers', :user_id => current_user.id, :fundraiser_id => fundraiser.id }, :method => "create", :class => 'btn btn-info' %>
+</td>
+</td>
+<td>
+<%= button_to 'Edit', edit_fundraiser_path(fundraiser), :method => 'get', :class => 'btn' %>
+<td>
+<%= button_to 'Delete', fundraiser_path(fundraiser), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+
 <% else %>
-  <%= button_to "Sign Up", { :action => "index", :controller => 'user_fundraisers', :user_id => current_user.id, :fundraiser_id => fundraiser.id }, :method => "create", :class => 'btn btn-mini' %> 
+<%= button_to "Sign Up", { :action => "index", :controller => 'user_fundraisers', :user_id => current_user.id, :fundraiser_id => fundraiser.id }, :method => "create", :class => 'btn btn-info' %> 
 <% end %>

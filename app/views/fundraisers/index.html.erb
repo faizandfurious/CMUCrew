@@ -46,13 +46,7 @@
         <td><%= fundraiser.event_date %></td>
         <td><%= fundraiser.location %></td>
         <td>
-        <% if current_user.is_fundraiser? %>
-              <%= link_to 'Edit', edit_fundraiser_path(fundraiser), :class => 'btn btn-mini' %>
-              <%= link_to 'Destroy', fundraiser_path(fundraiser), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
-              <%= button_to "Sign Up", { :action => "index", :controller => 'user_fundraisers', :user_id => current_user.id, :fundraiser_id => fundraiser.id }, :method => "create", :class => 'btn btn-mini' %> 
-        <% else %>
-              <%= button_to "Sign Up", { :action => "index", :controller => 'user_fundraisers', :user_id => current_user.id, :fundraiser_id => fundraiser.id }, :method => "create", :class => 'btn btn-mini' %> 
-        <% end %>
+          <%= render :partial => 'buttons', :locals => {:fundraiser => fundraiser} %>
         </td>
       </tr>
     <% end %>
@@ -79,13 +73,7 @@
         <td><%= fundraiser.event_date %></td>
         <td><%= fundraiser.location %></td>
         <td>
-        <% if current_user.is_fundraiser? %>
-              <%= link_to 'Edit', edit_fundraiser_path(fundraiser), :class => 'btn btn-mini' %>
-              <%= link_to 'Destroy', fundraiser_path(fundraiser), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
-              <%= button_to "Sign Up", { :action => "index", :controller => 'user_fundraisers', :user_id => current_user.id, :fundraiser_id => fundraiser.id }, :method => "create", :class => 'btn btn-mini' %> 
-        <% else %>
-              <%= button_to "Sign Up", { :action => "index", :controller => 'user_fundraisers', :user_id => current_user.id, :fundraiser_id => fundraiser.id }, :method => "create", :class => 'btn btn-mini' %> 
-        <% end %>
+          <%= render :partial => 'buttons', :locals => {:fundraiser => fundraiser} %>
         </td>
       </tr>
     <% end %>
@@ -94,7 +82,7 @@
 </table>
 
 <% if current_user.is_fundraiser? %>
-  <%= link_to 'New', new_fundraiser_path, :class => 'btn btn-primary' %>
+  <%= button_to 'New', new_fundraiser_path, :method => 'get', :class => 'btn btn-primary' %>
 <% end %>
 <% else %>
 

@@ -8,7 +8,7 @@
 			</div>
 		</div><!--/.well weather-->
 		<div class="well fundraising">
-			<h4>Fundraising Report <%= link_to "(View)", fundraisers_path, :class => "buttonlink" %></h4></br> 
+			<h4>Fundraising Report <%= link_to "(View)", my_fundraisers_path, :class => "buttonlink" %></h4></br> 
 			<p>You have completed <span class="counter"><strong><%= UserFundraiser.completed(1)[0] %></strong></span> of <strong><%= Fundraiser::TOTAL_REQUIRED %></strong> required fundraising events. You have <span class="counter"><strong><%= UserFundraiser.completed(1)[1] %></strong></span> upcoming fundraiser.
 			<!-- <% if @user_fundraisers %>
 				You are currently signed up for 

@@ -18,7 +18,7 @@
           <td><%= user_fundraiser.fundraiser.event_date %></td>
           <td><%= user_fundraiser.fundraiser.location %></td>
           <td>
-            <%= link_to 'Destroy', user_fundraiser_path(user_fundraiser), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+            <%= button_to 'Remove', user_fundraiser_path(user_fundraiser), :method => :delete, :confirm => 'Please consult the fundraising chairs before removing from your schedule.', :class => 'btn btn-danger' %>
           </td>
         </tr>
       <% end %>
