@@ -7,7 +7,7 @@ class Fundraiser < ActiveRecord::Base
     #Relationships
 	# -----------------------------  
     belongs_to :fundraiser_type
-    has_many :user_fundraisers, :inverse_of => :user_fundraisers, :dependent => :destroy
+    has_many :user_fundraisers, :dependent => :destroy
     has_many :users, :through => :user_fundraisers
   
     #Scopes
@@ -24,8 +24,15 @@ class Fundraiser < ActiveRecord::Base
     end
 
 
-    def increase_count
-        self.total_count = self.total_count + 1
+    def update_count
+        count = 0
+        @uf = UserFundraiser.all
+        @uf.each do |uf|
+            if(uf.fundraiser_id == self.id)
+                count = count + 1
+            end
+        end
+        self.total_count = count
     end
 
     def reduce_count

@@ -1,11 +1,10 @@
 class UserFundraiser < ActiveRecord::Base
   attr_accessible :user_id, :fundraiser_id
   
-  after_create :increase_capacity
 
   # Relationships
   # -----------------------------
-  belongs_to :fundraiser, :inverse_of => :user_fundraisers
+  belongs_to :fundraiser
   belongs_to :user
 
   validates_uniqueness_of :user_id, :scope => :fundraiser_id, :message => "You are already signed up for this fundraiser!"
@@ -24,9 +23,6 @@ class UserFundraiser < ActiveRecord::Base
   } 
 
   #Methods
-  def increase_capacity
-    fundraiser.increase_count
-  end
 
   def self.completed(id_user)
     #Number in 0th position is tracker for completed fundraisers, 1st position is for future fundraisers

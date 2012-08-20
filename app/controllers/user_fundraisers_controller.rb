@@ -60,7 +60,6 @@ class UserFundraisersController < ApplicationController
 
     respond_to do |format|
       if @user_fundraiser.save
-        @user_fundraiser.fundraiser.increase_count
         format.html { redirect_to @user_fundraiser, notice: 'User fundraiser was successfully created.' }
         format.json { render json: @user_fundraiser, status: :created, location: @user_fundraiser }
       else
