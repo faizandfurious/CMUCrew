@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120819142103) do
+ActiveRecord::Schema.define(:version => 20120820010207) do
 
   create_table "boats", :force => true do |t|
     t.string   "name"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20120819142103) do
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.integer  "capacity"
+    t.integer  "total_count"
   end
 
   create_table "lineups", :force => true do |t|

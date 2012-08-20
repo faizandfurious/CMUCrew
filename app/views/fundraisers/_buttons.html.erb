@@ -1,12 +1,12 @@
-<% if current_user.is_fundraiser? %>
+<% if fundraiser.is_full? %>
+<%= button_to "Sign Up", { :action => "index", :controller => 'user_fundraisers', :user_id => current_user.id, :fundraiser_id => fundraiser.id }, :method => "create", :class => 'btn btn-info', :disabled => 'true' %>
+<% else %>
 <%= button_to "Sign Up", { :action => "index", :controller => 'user_fundraisers', :user_id => current_user.id, :fundraiser_id => fundraiser.id }, :method => "create", :class => 'btn btn-info' %>
+<% end %>
 </td>
-</td>
+<% if current_user.is_fundraiser? %>
 <td>
 <%= button_to 'Edit', edit_fundraiser_path(fundraiser), :method => 'get', :class => 'btn' %>
 <td>
 <%= button_to 'Delete', fundraiser_path(fundraiser), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
-
-<% else %>
-<%= button_to "Sign Up", { :action => "index", :controller => 'user_fundraisers', :user_id => current_user.id, :fundraiser_id => fundraiser.id }, :method => "create", :class => 'btn btn-info' %> 
 <% end %>

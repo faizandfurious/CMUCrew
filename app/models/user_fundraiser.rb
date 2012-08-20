@@ -1,9 +1,11 @@
 class UserFundraiser < ActiveRecord::Base
   attr_accessible :user_id, :fundraiser_id
   
+  after_create :increase_capacity
+
   # Relationships
   # -----------------------------
-  belongs_to :fundraiser
+  belongs_to :fundraiser, :inverse_of => :user_fundraisers
   belongs_to :user
 
   validates_uniqueness_of :user_id, :scope => :fundraiser_id, :message => "You are already signed up for this fundraiser!"
@@ -21,22 +23,27 @@ class UserFundraiser < ActiveRecord::Base
     where("user_id = ?", user.id)
   } 
 
-    def self.completed(id_user)
-      #Number in 0th position is tracker for completed fundraisers, 1st position is for future fundraisers
-      count = [0, 0]
-      @uf = UserFundraiser.all
-      @uf.each do |uf|
-        if (uf.user_id == id_user)
-          #Fundraiser has been completed
-          if uf.fundraiser.event_date < Date.today
-            count[0] = count[0] + 1
-          #Fundraiser is in the future
-          else
-            count[1] = count[1].to_i + 1
-          end
+  #Methods
+  def increase_capacity
+    fundraiser.increase_count
+  end
+
+  def self.completed(id_user)
+    #Number in 0th position is tracker for completed fundraisers, 1st position is for future fundraisers
+    count = [0, 0]
+    @uf = UserFundraiser.all
+    @uf.each do |uf|
+      if (uf.user_id == id_user)
+        #Fundraiser has been completed
+        if uf.fundraiser.event_date < Date.today
+          count[0] = count[0] + 1
+        #Fundraiser is in the future
+        else
+          count[1] = count[1].to_i + 1
         end
       end
-      return count;
     end
+    return count;
+  end
    
 end

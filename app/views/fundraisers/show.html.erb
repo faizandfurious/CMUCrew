@@ -20,6 +20,16 @@
   <%= @fundraiser.description %>
 </p>
 
+<p>
+  <b>Total Count</b><br>
+  <%= @fundraiser.total_count %>
+</p>
+
+<p>
+  <b>Capacity</b><br>
+  <%= @fundraiser.capacity %>
+</p>
+
 <div class="form-actions">
   <%= link_to 'Back', fundraisers_path, :class => 'btn'  %>
   <% if can? :update, @fundraiser %>
