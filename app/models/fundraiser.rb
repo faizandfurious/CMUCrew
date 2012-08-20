@@ -24,6 +24,14 @@ class Fundraiser < ActiveRecord::Base
     end
 
 
+    def before_deadline?
+        if (self.event_date > (Date.today + 3))
+            return true
+        else
+            return false
+        end
+    end
+
     def update_count
         count = 0
         @uf = UserFundraiser.all

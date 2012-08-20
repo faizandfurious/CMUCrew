@@ -20,3 +20,5 @@
 $('.datepicker').datepicker({
     format: 'yyyy-mm-dd'
 });
+
+$('#example').tooltip('show')
