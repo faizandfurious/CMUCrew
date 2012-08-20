@@ -1,11 +1,12 @@
 <h2>Sign Up Confirmation</h2></br>
-<%= @user_fundraiser.fundraiser.total_count %>
 <p>
 You are signed up for the <b><%= @user_fundraiser.fundraiser.name %></b> fundraising event. The event is scheduled to take place on <b><%= @user_fundraiser.fundraiser.event_date %></b>.
 </p>
 
 <div class="form-actions">
-  <%= link_to 'Back', user_fundraisers_path, :class => 'btn'  %>
-  <%= link_to 'Edit', edit_user_fundraiser_path(@user_fundraiser), :class => 'btn' %>
-  <%= link_to 'Delete', user_fundraiser_path(@user_fundraiser), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+	<%= link_to 'Back', my_fundraisers_path, :class => 'btn'  %>
+	<% if current_user.is_fundraiser? %>
+	  	<%= link_to 'Edit', edit_user_fundraiser_path(@user_fundraiser), :class => 'btn' %>
+	  	<%= link_to 'Delete', user_fundraiser_path(@user_fundraiser), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+  	<% end %>
 </div>

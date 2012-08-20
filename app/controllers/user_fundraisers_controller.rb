@@ -63,7 +63,7 @@ class UserFundraisersController < ApplicationController
         format.html { redirect_to @user_fundraiser, notice: 'User fundraiser was successfully created.' }
         format.json { render json: @user_fundraiser, status: :created, location: @user_fundraiser }
       else
-        format.html { render action: "new" }
+        format.html { render action: "my_fundraisers" }
         format.json { render json: @user_fundraiser.errors, status: :unprocessable_entity }
       end
     end
@@ -92,7 +92,7 @@ class UserFundraisersController < ApplicationController
     @user_fundraiser.destroy
 
     respond_to do |format|
-      format.html { redirect_to user_fundraisers_url }
+      format.html { redirect_to my_fundraisers_url }
       format.json { head :no_content }
     end
   end
