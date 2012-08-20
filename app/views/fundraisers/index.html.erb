@@ -8,8 +8,6 @@
       <th>Location</th>
       <th>Capacity</th>
       <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -18,7 +16,7 @@
     <% if fundraiser.fundraiser_type.name == "Steelers Game" %>
       <tr>
         <td><%= link_to fundraiser.name, fundraiser_path(fundraiser) %></td>
-        <td><%= fundraiser.event_date %></td>
+        <td><%= fundraiser.event_date.strftime("%A, %B %d, %Y") %></td>
         <td><%= fundraiser.location %></td>
         <td><%= fundraiser.total_count %>/<%= fundraiser.capacity %></td>
         <td>
@@ -38,8 +36,6 @@
       <th>Location</th>
       <th>Capacity</th>
       <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -47,7 +43,7 @@
     <% if fundraiser.fundraiser_type.name == "Rent-A-Rower" %>
       <tr>
         <td><%= link_to fundraiser.name, fundraiser_path(fundraiser) %></td>
-        <td><%= fundraiser.event_date %></td>
+        <td><%= fundraiser.event_date.strftime("%A, %B %d, %Y") %></td>
         <td><%= fundraiser.location %></td>
         <td><strong><%= fundraiser.total_count %></strong>/<%= fundraiser.capacity %></td>
         <td>
@@ -67,8 +63,6 @@
       <th>Location</th>
       <th>Capacity</th>
       <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -76,7 +70,7 @@
       <% if fundraiser.fundraiser_type.name == "Gwen's Girls" %>
       <tr>
         <td><%= link_to fundraiser.name, fundraiser_path(fundraiser) %></td>
-        <td><%= fundraiser.event_date %></td>
+        <td><%= fundraiser.event_date.strftime("%A, %B %d, %Y") %></td>
         <td><%= fundraiser.location %></td>
         <td><strong><%= fundraiser.total_count %></strong>/<%= fundraiser.capacity %></td>
         <td>

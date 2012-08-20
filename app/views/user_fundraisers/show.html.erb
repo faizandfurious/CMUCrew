@@ -1,6 +1,6 @@
 <h2>Sign Up Confirmation</h2></br>
 <p>
-You are signed up for the <b><%= @user_fundraiser.fundraiser.name %></b> fundraising event. The event is scheduled to take place on <b><%= @user_fundraiser.fundraiser.event_date.str %></b>.
+You are signed up for the <b><%= @user_fundraiser.fundraiser.name %></b> fundraising event. The event is scheduled to take place on <b><%= @user_fundraiser.fundraiser.event_date.strftime("%A, %B %d, %Y") %></b>.
 </p>
 
 <div class="form-actions">
