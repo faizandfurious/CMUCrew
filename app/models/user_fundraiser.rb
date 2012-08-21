@@ -20,7 +20,7 @@ class UserFundraiser < ActiveRecord::Base
   # -----------------------------
   scope :current_user, lambda { |user| where("user_id = ?", user.id )}
 
-  scope :get_members, lambda {|id| where("fundraiser_id = ?", id )}
+  scope :find_by_fundraiser_id, lambda {|id| where("fundraiser_id = ?", id )}
 
   #Methods
 
