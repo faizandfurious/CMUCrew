@@ -6,10 +6,10 @@
 
 
 <div class="info_section">
-<p>This event will be occuring on <%= @fundraiser.event_date.strftime("%A, %B %d, %Y")%>, at <%= @fundraiser.location %>.
+<p>This event will be occuring on <strong><%= @fundraiser.event_date.strftime("%A, %B %d, %Y")%></strong>, at <strong><%= @fundraiser.location %></strong>.
 
 <% if @user_fundraisers.length > 0 %>
-There are <%= @fundraiser.capacity - @fundraiser.total_count %> spots left out of <%= @fundraiser.capacity %>.</p>
+There are <strong><%= @fundraiser.capacity - @fundraiser.total_count %></strong> spots left out of <strong><%= @fundraiser.capacity %></strong>.</p>
 
 <p> Here is a list of the attendees:</p>
 
