@@ -1,13 +1,17 @@
 <% if user_signed_in? %>
-<h1>Steeler's Games</h1>
-<table class="table table-bordered table-striped">
+<h1 class="steelers">Steeler's Games</h1>
+<table class="table table-bordered table-steelered">
   <thead>
     <tr>
       <th>Event Name</th>
       <th>Event Date</th>
       <th>Location</th>
       <th>Capacity</th>
+      <% if current_user.is_fundraiser? %>
       <th></th>
+      <th></th>
+      <th></th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
@@ -28,14 +32,18 @@
   </tbody>
 </table>
 <h1>Rent-A-Rowers</h1>
-<table class="table table-bordered table-striped">
+<table class="table table-bordered table-cmu">
   <thead>
     <tr>
       <th>Event Name</th>
       <th>Event Date</th>
       <th>Location</th>
       <th>Capacity</th>
+      <% if current_user.is_fundraiser? %>
       <th></th>
+      <th></th>
+      <th></th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
@@ -45,7 +53,7 @@
         <td><%= link_to fundraiser.name, fundraiser_path(fundraiser) %></td>
         <td><%= fundraiser.event_date.strftime("%A, %B %d, %Y") %></td>
         <td><%= fundraiser.location %></td>
-        <td><strong><%= fundraiser.total_count %></strong>/<%= fundraiser.capacity %></td>
+        <td><%= fundraiser.total_count %>/<%= fundraiser.capacity %></td>
         <td>
           <%= render :partial => 'buttons', :locals => {:fundraiser => fundraiser} %>
         </td>
@@ -55,24 +63,28 @@
   </tbody>
 </table>
 <h1>Gwen's Girls</h1>
-<table class="table table-bordered table-striped">
+<table class="table table-bordered table-gwens">
   <thead>
     <tr>
       <th>Event Name</th>
       <th>Event Date</th>
       <th>Location</th>
       <th>Capacity</th>
+      <% if current_user.is_fundraiser? %>
       <th></th>
+      <th></th>
+      <th></th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
     <% @fundraisers.each do |fundraiser| %>
-      <% if fundraiser.fundraiser_type.name == "Gwen's Girls" %>
+      <% if fundraiser.fundraiser_type.name == "Gwens Girls" %>
       <tr>
         <td><%= link_to fundraiser.name, fundraiser_path(fundraiser) %></td>
         <td><%= fundraiser.event_date.strftime("%A, %B %d, %Y") %></td>
         <td><%= fundraiser.location %></td>
-        <td><strong><%= fundraiser.total_count %></strong>/<%= fundraiser.capacity %></td>
+        <td><%= fundraiser.total_count %>/<%= fundraiser.capacity %></td>
         <td>
           <%= render :partial => 'buttons', :locals => {:fundraiser => fundraiser} %>
         </td>

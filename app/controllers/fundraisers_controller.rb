@@ -16,6 +16,7 @@ class FundraisersController < ApplicationController
   # GET /fundraisers/1.json
   def show
     @fundraiser = Fundraiser.find(params[:id])
+    @user_fundraisers = UserFundraiser.get_members(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

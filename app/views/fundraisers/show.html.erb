@@ -1,35 +1,42 @@
-<h2><%= @fundraiser.name %></h2>
+<% @fundraiser.update_count %>
 
-<p>
-  <b>Type</b><br>
-  <%= @fundraiser.fundraiser_type.name %>
-</p>
+<div>
+  <span id="fundraiser-name"><%= @fundraiser.name %> </span> <span id="fundraiser-type">(<%= @fundraiser.fundraiser_type.name %>)</span>
+</div>
 
-<p>
-  <b>Date</b><br>
-  <%= @fundraiser.event_date.strftime("%A, %B %d, %Y") %>
-</p>
 
-<p>
-  <b>Location</b><br>
-  <%= @fundraiser.location %>
-</p>
+<div class="info_section">
+<p>This event will be occuring on <%= @fundraiser.event_date.strftime("%A, %B %d, %Y")%>, at <%= @fundraiser.location %>.
 
-<p>
-  <b>Description</b><br>
-  <%= @fundraiser.description %>
-</p>
+<% if @user_fundraisers.length > 0 %>
+There are <%= @fundraiser.capacity - @fundraiser.total_count %> spots left out of <%= @fundraiser.capacity %>.</p>
 
-<p>
-  <b>Total Count</b><br>
-  <%= @fundraiser.total_count %>
-</p>
+<p> Here is a list of the attendees:</p>
 
-<p>
-  <b>Capacity</b><br>
-  <%= @fundraiser.capacity %>
-</p>
+<div id="fundraiser-table-show">
+  <table class="table table-bordered table-striped">
+    <tbody>
+      <% @user_fundraisers.each do |user_fundraiser| %>
+        <tr>
+          <td><%= User.find(user_fundraiser.user_id).first_name %></td>
+          <% if current_user.is_fundraiser? %>
+            <%= link_to 'Remove', user_fundraiser_path(user_fundraiser), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<% else %>
+</p><p>There is currently no one signed up for this event. Be the first!</p>
+<%= button_to "Sign Up", { :action => "index", :controller => 'user_fundraisers', :user_id => current_user.id, :fundraiser_id => @fundraiser.id }, :method => "create", :class => 'btn btn-info' %>
+<% end %>
 
+</div>
+
+
+
+<% if current_user.is_fundraiser? %>
 <div class="form-actions">
   <%= link_to 'Back', fundraisers_path, :class => 'btn'  %>
   <% if can? :update, @fundraiser %>
@@ -37,3 +44,4 @@
     <%= link_to 'Delete', fundraiser_path(@fundraiser), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
   <% end %>
 </div>
+<% end %>

@@ -13,6 +13,17 @@
  *= require_tree .
 */
 
+/* Fonts
+*/
+
+@font-face {
+	font-family:'Gunplay';
+	src: url(<%= asset_path "gunplay_rg.ttf" %>) format('truetype');
+}
+
+/* Generic Styling
+*/
+
 html{
 }
 
@@ -46,6 +57,121 @@ body{
 	font-style:italic;
 	color:#7dad1b;
 }
+
+/* FUNDRAISERS SECTION
+*/
+
+/* Fundraiser Index
+*/
+.steelers{
+	text-transform: uppercase;
+	font-family:'Gunplay';
+	font-weight:lighter;
+	color:black;
+}
+
+.table-steelered thead th{
+
+	font-family:'Gunplay';
+	font-weight:lighter;
+	background:white;
+}
+
+.table-steelered tbody tr td{
+	font-family:'Gunplay';
+	font-weight:lighter;
+}
+
+.table-steelered tbody tr:nth-child(odd) td{
+	color:rgb(242, 230, 6);
+	background-color:black;
+}
+
+.table-steelered tbody tr:nth-child(odd):hover td{
+	color:rgb(242, 230, 6);
+	background-color:rgb(10,10,10);
+}
+
+.table-steelered tbody tr:nth-child(even) td{
+	color:black;
+	background-color:rgb(242, 230, 6);
+}
+
+.table-steelered tbody tr:nth-child(even):hover td{
+	color:black;
+	background-color:rgb(234, 223, 6);
+}
+
+
+.table-cmu thead th{
+	background:#919295;
+}
+
+.table-cmu tbody tr:nth-child(odd) td{
+	color:#d8d9da;
+	background-color:rgb(153,0,0);
+}
+
+.table-cmu tbody tr:nth-child(odd):hover td{
+	color:#d8d9da;
+	background-color:rgb(148,0,0);
+}
+
+.table-cmu tbody tr:nth-child(even) td{
+	color:#d8d9da;
+	background-color:black;
+}
+
+.table-cmu tbody tr:nth-child(even):hover td{
+	color:#d8d9da;
+	background-color:rgb(10,10,10);
+}
+
+
+.table-gwens thead th{
+	background:#919295;
+}
+
+.table-gwens tbody tr:nth-child(odd) td{
+	color:#d8d9da;
+	background-color:rgb(89,3,136);
+}
+
+.table-gwens tbody tr:nth-child(odd):hover td{
+	color:#d8d9da;
+	background-color:rgb(87,3,133);
+}
+
+.table-gwens tbody tr:nth-child(even) td{
+	color:#d8d9da;
+	background-color:black;
+}
+
+.table-gwens tbody tr:nth-child(even):hover td{
+	color:#d8d9da;
+	background-color:rgb(10,10,10);
+}
+
+/* Fundraiser Show
+*/
+
+#fundraiser-name{
+	font-size:28px;
+	font-weight:bold;
+}
+
+#fundraiser-type{
+	font-size:12px;
+	color:#5a5b5b;
+	font-weight:lighter;
+}
+
+#fundraiser-table-show{
+	width:20em;
+}
+
+/* Navigation Bar
+*/ 
 
 ul.hmenu {
   list-style: none;	
