@@ -51,5 +51,15 @@ class Fundraiser < ActiveRecord::Base
         return(self.total_count >= self.capacity)
     end
 
+    def signed_up?(user)
+        @uf = UserFundraiser.get_members(self.id)
+        @uf.each do |uf|
+            if(uf.fundraiser_id == self.id)
+                return true
+            end
+        end
+        return false
+    end
+
 
 end

@@ -18,7 +18,7 @@ class UserFundraiser < ActiveRecord::Base
   
   # Scopes
   # -----------------------------
-  scope :current_user, lambda { |user| where("user_id = ?", user.id )} 
+  scope :current_user, lambda { |user| where("user_id = ?", user.id )}
 
   scope :get_members, lambda {|id| where("fundraiser_id = ?", id )}
 
