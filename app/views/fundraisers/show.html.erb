@@ -18,10 +18,11 @@ There are <%= @fundraiser.capacity - @fundraiser.total_count %> spots left out o
     <tbody>
       <% @user_fundraisers.each do |user_fundraiser| %>
         <tr>
-          <td><%= User.find(user_fundraiser.user_id).first_name %></td>
+          <td><%= User.find(user_fundraiser.user_id).first_name %>
           <% if current_user.is_fundraiser? %>
-            <%= link_to 'Remove', user_fundraiser_path(user_fundraiser), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+            <%= link_to 'Remove', user_fundraiser_path(user_fundraiser), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger adjust-right' %>
           <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>
