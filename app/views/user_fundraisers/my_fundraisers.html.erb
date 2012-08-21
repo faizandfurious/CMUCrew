@@ -1,6 +1,9 @@
 <h1>My Fundraisers</h1>
 <% if @user_fundraisers.length < 1 %>
-<div class="info_section">You are currently not signed up for any fundraisers!</div>
+<div class="info_section">
+  <p>You are currently not signed up for any fundraisers!</p>
+  <p>Click <%= link_to 'here', fundraisers_path %> to begin!</p>
+</div>
 <% else %>
 <table class="table table-bordered table-striped">
   <thead>
