@@ -54,7 +54,7 @@ class Fundraiser < ActiveRecord::Base
     def signed_up?(user)
         @uf = UserFundraiser.find_by_fundraiser_id(self.id)
         @uf.each do |uf|
-            if(uf.fundraiser_id == self.id)
+            if(uf.user_id == self.id)
                 return true
             end
         end

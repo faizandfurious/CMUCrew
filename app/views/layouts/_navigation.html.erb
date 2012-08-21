@@ -1,6 +1,7 @@
 <% if user_signed_in? %>
-	<li><%= link_to "Practices", practices_path, :class => "navlink" %></li>
+	<li><%= link_to "My Fundraisers", my_fundraisers_path, :class => "navlink" %></li>
 	<li><%= link_to "Fundraising", fundraisers_path, :class => "navlink" %></li>
+	<li><%= link_to "Practices", practices_path, :class => "navlink" %></li>
 	<li><%= link_to "Races", races_path, :class => "navlink" %></li>
 	<li><%= link_to "Lineups", lineups_path, :class => "navlink" %></li>
 	<li><%= link_to "Coaches Area", page_path('coaches_area'), :class => "navlink" %></li>
