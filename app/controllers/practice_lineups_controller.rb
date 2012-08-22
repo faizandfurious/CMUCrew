@@ -1,4 +1,5 @@
 class PracticeLineupsController < ApplicationController
+  before_filter :authenticate_user!
   # GET /practice_lineups
   # GET /practice_lineups.json
   def index

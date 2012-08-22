@@ -12,10 +12,11 @@ class Boat < ActiveRecord::Base
     # -----------------------------
 
 	#Constants
-	SIZES = {'1x' => 'Single', '2-' => 'Pair', '2x' => 'Double','4+' => 'Four', '4x' => 'Quad','8+' => 'Eight'}
+	SIZES = ['1x', '2-', '2x','4+', '4x','8+']
   
   
     # Other methods
     # -----------------------------    
+
 
 end

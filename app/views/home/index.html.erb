@@ -2,11 +2,14 @@
 
 <h1>Welcome Back, <%= current_user.first_name %>.</h1></br>
 
+<% if @practice.nil? %>
+	<div>There is currently no practice scheduled for tomorrow. </div>
+<% else %>
 <div class= "schedule">
-	<h3>Tomorrow's Schedule:</h3></br>
+	<h3>Schedule for <%= @practice.date.strftime("%A, %B %d") %>.</h3></br>
 	<div class="workout-description">
-		<p>Launch time is <strong>5:30am</strong>.</p>
-		<p>5x15 minute steady state row. Technical day.</p>
+		<p>Launch time is <strong><%= @practice.time %></strong>.</p>
+		<p>Tomorrow's practice will be <strong><%= @practice.workout_type.name %></strong>.</p>
 	</div>
 	<div class="boat-assignment">
 		<ul class="boat-lineup">
@@ -20,7 +23,9 @@
 		<p>You will be rowing the <strong>White V1</strong>.
 	</div>
 </div>
+<% end %>
 
+<br />
 
 <% else %>
 

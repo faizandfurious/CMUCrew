@@ -1,11 +1,19 @@
 <%= form_for @practice, :html => { :class => 'form-horizontal' } do |f| %>
+<%= f.error_messages %>
   <fieldset>
     <legend><%= controller.action_name.capitalize %> Practice</legend>
 
     <div class="control-group">
       <%= f.label :date, :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_field :date, :class => 'text_field datepicker' %>
+        <%= f.text_field :date, :class => 'text_field datepicker', :dataFormat => 'DD-MM-YYYY' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :time, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select :time, Practice::TIMES, :prompt => 'Select...'%>
       </div>
     </div>
 
@@ -25,7 +33,7 @@
 
     <div class="form-actions">
       <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to 'Cancel', fundraisers_path, :class => 'btn' %>
+      <%= link_to 'Cancel', practices_path, :class => 'btn' %>
     </div>
   </fieldset>
 <% end %>

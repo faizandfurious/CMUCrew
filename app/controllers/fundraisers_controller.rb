@@ -1,10 +1,14 @@
 class FundraisersController < ApplicationController
-  before_filter :authenticate_user!, :except => 'index'
+  before_filter :authenticate_user!
   load_and_authorize_resource
   # GET /fundraisers
   # GET /fundraisers.json
   def index
-    @fundraisers = Fundraiser.all
+    if(@current_user.is_fundraiser?)
+      @fundraisers = Fundraiser.all
+    else
+      @fundraisers = Fundraiser.before_event_date
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -16,6 +20,7 @@ class FundraisersController < ApplicationController
   # GET /fundraisers/1.json
   def show
     @fundraiser = Fundraiser.find(params[:id])
+    @user_fundraisers = UserFundraiser.find_by_fundraiser_id(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

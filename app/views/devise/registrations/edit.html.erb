@@ -5,7 +5,7 @@
 
 
 
-  <div><%= f.label :email %><br />
+  <div><%= f.label :email %>
   <%= f.email_field :email %></div>
 
   <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
@@ -30,56 +30,6 @@
       <%= f.text_field :last_name, :class => 'text_field' %>
     </div>
   </div>
-
-  <div class="control-group">
-    <%= f.label :weight, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :weight, :class => 'number_field' %>
-    </div>
-  </div>
-
-  <div class="control-group">
-    <%= f.label :height, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :height, :class => 'number_field' %>
-    </div>
-  </div>
-
-  <div class="control-group">
-    <%= f.label :rowing_side, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :rowing_side, :class => 'text_field' %>
-    </div>
-  </div>
-
-  <div class="control-group">
-    <%= f.label :email, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :email, :class => 'text_field' %>
-    </div>
-  </div>
-
-  <div class="control-group">
-    <%= f.label :phone, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :phone, :class => 'text_field' %>
-    </div>
-  </div>
-
-  <div class="control-group">
-    <%= f.label :year, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :year, :class => 'text_field' %>
-    </div>
-  </div>
-
-  <div class="control-group">
-    <%= f.label :major, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :major, :class => 'text_field' %>
-    </div>
-  </div>
-
 
   <div><%= f.submit "Update" %></div>
 <% end %>
