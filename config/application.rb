@@ -56,6 +56,7 @@ module CMUCrewWebsite
     # Enable the asset pipeline
     config.assets.enabled = true
     config.assets.paths << "#{Rails.root}/app/assets/fonts"
+    config.use_dynamic_shortcuts if defined?(Rails::Server) || defined?(Rails::Console)
     config.assets.initialize_on_precompile = false
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
