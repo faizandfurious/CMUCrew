@@ -1,9 +1,9 @@
 <% if fundraiser.is_full?%>
-	<a href="#" rel="tooltip" data-original-title="This fundraising event has reached capacity."><button class="btn btn-danger">Sign Up</button></a>
+	<a href="#" rel="tooltip" data-original-title="This fundraising event has reached capacity."><button class="btn btn-info">Sign Up</button></a>
 <% elsif fundraiser.signed_up?(@current_user) %>
-	<a href="#" rel="tooltip" data-original-title="You are already signed up for this fundraising event."><button class="btn btn-danger">Sign Up</button></a>
+	<a href="#" rel="tooltip" data-original-title="You are already signed up for this fundraising event."><button class="btn btn-info">Sign Up</button></a>
 <% elsif fundraiser.after_date? %>
-	<a href="#" rel="tooltip" data-original-title="This fundraising event has already occured."><button class="btn btn-danger">Sign Up</button></a>
+	<a href="#" rel="tooltip" data-original-title="This fundraising event has already occured."><button class="btn btn-info">Sign Up</button></a>
 <% else %>
 <%= button_to "Sign Up", { :action => "index", :controller => 'user_fundraisers', :user_id => current_user.id, :fundraiser_id => fundraiser.id }, :method => "create", :class => 'btn btn-info' %>
 <% end %>
