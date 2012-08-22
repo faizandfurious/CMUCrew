@@ -4,7 +4,11 @@ class FundraisersController < ApplicationController
   # GET /fundraisers
   # GET /fundraisers.json
   def index
-    @fundraisers = Fundraiser.all
+    if(@current_user.is_fundraiser?)
+      @fundraisers = Fundraiser.all
+    else
+      @fundraisers = Fundraiser.before_event_date
+    end
 
     respond_to do |format|
       format.html # index.html.erb

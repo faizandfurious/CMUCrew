@@ -12,6 +12,7 @@ class Fundraiser < ActiveRecord::Base
   
     #Scopes
 	# -----------------------------  
+    scope :before_event_date, where("event_date < ?", Date.today)
 
     #Constants
 	# -----------------------------  
@@ -26,6 +27,14 @@ class Fundraiser < ActiveRecord::Base
 
     def before_deadline?
         if (self.event_date > (Date.today + 3))
+            return true
+        else
+            return false
+        end
+    end
+
+    def after_date?
+        if (self.event_date < Date.today)
             return true
         else
             return false
