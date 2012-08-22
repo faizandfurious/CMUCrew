@@ -4,7 +4,7 @@ class UserFundraiser < ActiveRecord::Base
 
   # Relationships
   # -----------------------------
-  belongs_to :fundraiser, :inverse_of => :user_fundraisers
+  belongs_to :fundraiser
   belongs_to :user
 
   validates_uniqueness_of :user_id, :scope => :fundraiser_id, :message => "You are already signed up for this fundraiser!"
