@@ -10,7 +10,7 @@
   <p>This event already occured.</p>
 <% else %>
   <p>This event will be occuring on <strong><%= @fundraiser.event_date.strftime("%A, %B %d, %Y")%></strong>, at <strong><%= @fundraiser.location %></strong>.
-  <% if @user_fundraiser.nil? %>
+  <% if @user_fundraisers.nil? %>
     </p><p>There is currently no one signed up for this event. Be the first!</p>
     <%= button_to "Sign Up", { :action => "index", :controller => 'user_fundraisers', :user_id => current_user.id, :fundraiser_id => @fundraiser.id }, :method => "create", :class => 'btn btn-info' %>
 
