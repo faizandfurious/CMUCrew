@@ -91,8 +91,10 @@ class UserFundraisersController < ApplicationController
     @user_fundraiser = UserFundraiser.find(params[:id])
     @user_fundraiser.destroy
 
+    session[:return_to] ||= request.referer
+
     respond_to do |format|
-      format.html { redirect_to my_fundraisers_url }
+      format.html { redirect_to session[:return_to] }
       format.json { head :no_content }
     end
   end
