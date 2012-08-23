@@ -7,7 +7,9 @@ class HomeController < ApplicationController
   	else
   		@practice = Practice.tomorrow.second
   	end
-
+    if(current_user)
+      @user_fundraisers = UserFundraiser.current_user(current_user)
+    end
 
     respond_to do |format|
       format.html # index.html.erb
