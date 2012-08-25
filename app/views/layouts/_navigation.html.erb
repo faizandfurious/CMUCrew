@@ -1,17 +1,33 @@
-<% if user_signed_in? %>
-	<li><%= link_to "My Fundraisers", my_fundraisers_path, :class => "navlink" %></li>
-	<li><%= link_to "Fundraising", fundraisers_path, :class => "navlink" %></li>
-	<li> <a href="#" class="navlink" rel="tooltip" data-original-title="Check Back Soon!">Practices</a></li>
-	<li> <a href="#" class="navlink" rel="tooltip" data-original-title="Check Back Soon!">Races</a></li>
-	<li> <a href="#" class="navlink" rel="tooltip" data-original-title="Check Back Soon!">Coaches Area</a></li>
-<% else %>
-	<li><%= link_to "Practices", page_path('practices'), :class => "navlink" %></li>
-	<li><%= link_to "Fundraising", page_path('fundraising'), :class => "navlink" %></li>
-	<li><%= link_to "Races", page_path('regattas'), :class => "navlink" %></li>
-	<li><%= link_to "Our Coaches", page_path('coaches'), :class => "navlink" %></li>
-	<li><%= link_to "Roster", page_path('roster'), :class => "navlink" %></li>
-	<li><%= link_to "History", page_path('history'), :class => "navlink" %></li>
-	<!-- <li><%= link_to "Photos", page_path('photos'), :class => "navlink" %></li> -->
-	<li><%= link_to "Alumni", page_path('alumni'), :class => "navlink" %></li>
-	<li><%= link_to "Contact Us", page_path('contact_us'), :class => "navlink" %></li>
-<% end %>
+<div class="nav-wrapper">
+   <div class="container">
+ 		<div class="row">
+			<div class="span12 navigation">
+				<ul class="nav-left">
+	            <li><%= link_to "Carnegie Mellon Crew", root_path, :class => "title" %></li>
+		        </ul>
+		        <ul class="nav nav-pills nav-custom"> 
+	            <% if user_signed_in? %>
+					<li><%= link_to "My Fundraisers", my_fundraisers_path, :class => "navlink" %></li>
+					<li><%= link_to "Fundraising", fundraisers_path, :class => "navlink" %></li>
+					<li> <a href="#" class="navlink" rel="tooltip" data-original-title="Check Back Soon!">Practices</a></li>
+					<li> <a href="#" class="navlink" rel="tooltip" data-original-title="Check Back Soon!">Races</a></li>
+					<li> <a href="#" class="navlink" rel="tooltip" data-original-title="Check Back Soon!">Coaches Area</a></li>
+				<% else %>
+					<li><%= link_to "Practices", page_path('practices'), :class => "navlink" %></li>
+					<li><%= link_to "Fundraising", page_path('fundraising'), :class => "navlink" %></li>
+					<li><%= link_to "Races", page_path('regattas'), :class => "navlink" %></li>
+					<li><%= link_to "Our Coaches", page_path('coaches'), :class => "navlink" %></li>
+					<li><%= link_to "Roster", page_path('roster'), :class => "navlink" %></li>
+					<li><%= link_to "History", page_path('history'), :class => "navlink" %></li>
+					<!-- <li><%= link_to "Photos", page_path('photos'), :class => "navlink" %></li> -->
+					<li><%= link_to "Alumni", page_path('alumni'), :class => "navlink" %></li>
+					<li><%= link_to "Contact Us", page_path('contact_us'), :class => "navlink" %></li>
+				<% end %>
+				<%= render 'devise/menu/registration_items' %>
+		  		<%= render 'devise/menu/login_items' %>
+				</ul>
+			</div><!--/navigation-->
+		</div><!--/row-->
+	</div><!--/container-->
+    <div class="maroon-banner"></div>
+</div><!--/nav-wrapper-->

@@ -4,7 +4,7 @@ You are signed up for the <b><%= @user_fundraiser.fundraiser.name %></b> fundrai
 </p>
 
 <div class="form-actions">
-	<%= link_to 'Back', my_fundraisers_path, :class => 'btn'  %>
+	<%= link_to 'Back', fundraisers_path, :class => 'btn'  %>
 	<% if current_user.is_fundraiser? %>
 	  	<%= link_to 'My Fundraiseres', my_fundraisers_path, :class => 'btn' %>
 	  	<%= link_to 'Home', root_path, :class => 'btn' %>

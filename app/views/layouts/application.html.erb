@@ -21,25 +21,8 @@
     <link href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
   </head>
   <body>
- 	<div class="nav-wrapper">
 
-	   <div class="container">
-	 		<div class="row">
-				<div class="span12 navigation">
-					<ul class="nav-left">
-            <li><%= link_to "Carnegie Mellon Crew", root_path, :class => "title" %></li>
-          </ul>
-          <ul class="nav nav-pills nav-custom">
-            <%= render 'layouts/navigation' %>
-					 	<%= render 'devise/menu/registration_items' %>
-	  				<%= render 'devise/menu/login_items' %>
-					</ul>
-				</div><!--/navigation-->
-			</div><!--/row-->
-		</div><!--/container-->
-
-    <div class="maroon-banner"></div>
-	</div><!--/nav-wrapper-->
+    <%= render 'layouts/navigation' %>
 
 	<div class="container">
 		<div class="row">
