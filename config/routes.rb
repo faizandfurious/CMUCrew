@@ -1,5 +1,7 @@
 CMUCrewWebsite::Application.routes.draw do
 
+  resources :locations
+
   resources :races
 
   resources :race_lineups
