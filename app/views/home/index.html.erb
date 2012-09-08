@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
 
 <h1>Welcome Back, <%= current_user.first_name %>.</h1></br>
-
+<%=request.location.address %>
 <% if @practice.nil? %>
   <div>There is currently no practice scheduled for tomorrow. </div>
 <% else %>
