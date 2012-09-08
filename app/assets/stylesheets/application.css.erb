@@ -21,6 +21,11 @@
 	src: url(<%= asset_path "gunplay_rg.ttf" %>) format('truetype');
 }
 
+@font-face {
+	font-family:'Bronic';
+	src: url(<%= asset_path "bronic.ttf" %>) format('truetype');
+}
+
 /* Generic Styling
 */
 
@@ -99,6 +104,11 @@ body{
 	color:black;
 }
 
+.gwens{
+	font-family:'Bronic';
+	color:purple;
+}
+
 .table-steelered thead th{
 
 	font-family:'Gunplay';
@@ -111,78 +121,15 @@ body{
 	font-weight:lighter;
 }
 
-.table-steelered tbody tr:nth-child(odd) td{
-	color:rgb(242, 230, 6);
-	background-color:black;
+.table-gwens tbody tr td{
+	
+	font-family:'Bronic';
+	color:purple;
 }
-
-.table-steelered tbody tr:nth-child(odd):hover td{
-	color:rgb(242, 230, 6);
-	background-color:rgb(10,10,10);
-}
-
-.table-steelered tbody tr:nth-child(even) td{
-	color:black;
-	background-color:rgb(242, 230, 6);
-}
-
-.table-steelered tbody tr:nth-child(even):hover td{
-	color:black;
-	background-color:rgb(234, 223, 6);
-}
-
-
-.table-cmu thead th{
-	background:#919295;
-}
-
-.table-cmu tbody tr:nth-child(odd) td{
-	color:black;
-	font-weight:bold;
-	background-color:rgb(153,0,0);
-}
-
-.table-cmu tbody tr:nth-child(odd):hover td{
-	color:black;
-	font-weight:bold;
-	background-color:rgb(148,0,0);
-}
-
-.table-cmu tbody tr:nth-child(even) td{
-	color:rgb(153,0,0);
-	font-weight:bold;
-	background-color:black;
-}
-
-.table-cmu tbody tr:nth-child(even):hover td{
-	color:rgb(153,0,0);
-	font-weight:bold;
-	background-color:rgb(10,10,10);
-}
-
-
-.table-gwens thead th{
-	background:#919295;
-}
-
-.table-gwens tbody tr:nth-child(odd) td{
-	color:#d8d9da;
-	background-color:rgb(89,3,136);
-}
-
-.table-gwens tbody tr:nth-child(odd):hover td{
-	color:#d8d9da;
-	background-color:rgb(87,3,133);
-}
-
-.table-gwens tbody tr:nth-child(even) td{
-	color:#594b88;
-	background-color:#d8d9da;
-}
-
-.table-gwens tbody tr:nth-child(even):hover td{
-	color:#594b88;
-	background-color:rgb(212,213,214);
+.table-gwens thead tr th{
+	
+	font-family:'Bronic';
+	color:purple;
 }
 
 /* Fundraiser Show

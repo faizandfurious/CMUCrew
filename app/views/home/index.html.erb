@@ -8,52 +8,18 @@
 <div class= "schedule">
   <h3>Schedule for <%= @practice.date.strftime("%A, %B %d") %>.</h3></br>
   <div class="workout-description">
-    <p>Launch time is <strong><%= @practice.time %></strong>.</p>
+    <p>Launch time is <strong><%= @practice.time %></strong> at <strong><%= @practice.location %></strong>.</p>
     <p>Tomorrow's practice will be <strong><%= @practice.workout_type.name %></strong>.</p>
   </div>
-  <div class="boat-assignment">
-    <ul class="boat-lineup">
-      <h3>Boat lineup</h3>
-      <li><strong>Coxswain </strong>Filipino Jones</li>       
-      <li><strong>Stroke Seat </strong>Joshua Harvey</li>
-      <li><strong>3 Seat </strong>Joe Guihan</li>
-      <li><strong>2 Seat </strong>Faiz Abbasi</li>
-      <li><strong>Bow Seat </strong>Wesley Transue</li>
-    </ul>
-    <p>You will be rowing the <strong>White V1</strong>.
-  </div>
+
+<p>
+  <% if !@practice.description.nil? %>
+    <h3>Description</h3>
+    <p><%= @practice.description.html_safe %></p>
+  <% end %>
+</p>
 </div>
 <% end %>
-
-
-<table class="table table-bordered table-striped">
-  <thead>
-    <tr>
-      <th>Fundraiser Name</th>
-      <th>Fundraiser Date</th>
-      <th>Location</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-      <% @user_fundraisers.each do |user_fundraiser| %>
-        <tr>
-          <td><%= user_fundraiser.fundraiser.name %></td>
-          <td><%= user_fundraiser.fundraiser.event_date.strftime("%A, %B %d, %Y") %></td>
-          <td><%= user_fundraiser.fundraiser.location %></td>
-          <td>
-            <% if user_fundraiser.fundraiser.before_deadline? %>
-              <%= button_to 'Remove', user_fundraiser_path(user_fundraiser), :method => :delete, :confirm => 'Please consult the fundraising chairs before removing from your schedule.', :class => 'btn btn-danger' %>
-            <% else %>
-              <a href="#" rel="tooltip" data-original-title="Please contact a fundraising chair to request removal of this fundraiser."><button class="btn btn-warning">Remove</button></a>
-            <% end %>
-          </td>
-        </tr>
-      <% end %>
-  </tbody>
-</table>
-
-<br />
 
 <% else %>
 
