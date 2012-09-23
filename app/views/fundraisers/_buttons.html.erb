@@ -1,7 +1,7 @@
-<% if fundraiser.is_full?%>
-	<a href="#" rel="tooltip" data-original-title="This fundraising event has reached capacity."><button class="btn btn-info">Sign Up</button></a>
-<% elsif fundraiser.signed_up?(@current_user) %>
+<% if fundraiser.signed_up?(@current_user) %>
 	<a href="#" rel="tooltip" data-original-title="You are already signed up for this fundraising event."><button class="btn btn-info">Sign Up</button></a>
+<% elsif fundraiser.is_full?%>
+	<a href="#" rel="tooltip" data-original-title="This fundraising event has reached capacity."><button class="btn btn-info">Sign Up</button></a>
 <% elsif fundraiser.after_date? %>
 	<a href="#" rel="tooltip" data-original-title="This fundraising event has already occured."><button class="btn btn-info">Sign Up</button></a>
 <% else %>
