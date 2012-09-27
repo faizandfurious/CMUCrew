@@ -17,3 +17,8 @@
 //= require bootstrap-datepicker/core
 //= require jquery_nested_form
 //= require_tree .
+$('.datepicker').datepicker({
+    format: 'yyyy-mm-dd'
+});
+
+$('#example').tooltip('show')

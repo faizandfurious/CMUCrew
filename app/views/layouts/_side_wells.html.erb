@@ -1,0 +1,22 @@
+<div class="span3">
+	<% if user_signed_in? %>
+		<div class="well fundraising">
+			<h4>Fundraising Report <%= link_to "(View)", my_fundraisers_path, :class => "buttonlink" %></h4></br> 
+			<p>You have completed <span class="counter"><strong><%= UserFundraiser.completed(current_user.id)[0] %></strong></span> of <strong><%= Fundraiser::TOTAL_REQUIRED %></strong> required fundraising events. You have <span class="counter"><strong><%= UserFundraiser.completed(current_user.id)[1] %></strong></span> upcoming fundraiser.
+		</div><!--/.well fundraising-->
+	<% else %>
+		<div class = "well recruitment">
+			<h4>Interested in Rowing?</h4></br>
+	        <p>We are looking for both experienced and new rowers and coxswains to start this fall. The only requirements
+	        for joining our team are a competitive personality and willingness to work hard.</br></br>
+	        <a href="recruitment.html"><%= mail_to "captains@tartancrew.org", "I'm Interested" %></a>
+	        </p>
+		</div><!--/.well recruitment-->
+		<div class = "well alumni">
+			<h4>Our Alumni</h4></br>
+	        <p>We've been lucky to have a large and active alumni association. </br></br>
+	        <a href="http://alumni.cmu.edu/s/1410/alumni/index.aspx?sid=1410&gid=1&pgid=525">Find Them Here</a>
+	        </p>
+		</div><!--/.well alumni-->
+	<% end %>
+</div><!--/span-->

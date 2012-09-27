@@ -1,0 +1,34 @@
+<h1>My Fundraisers</h1>
+<% if @user_fundraisers.length < 1 %>
+<div class="info_section">
+  <p>You are currently not signed up for any fundraisers!</p>
+  <p>Click <%= link_to 'here', fundraisers_path %> to begin!</p>
+</div>
+<% else %>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Fundraiser Name</th>
+      <th>Fundraiser Date</th>
+      <th>Location</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @user_fundraisers.each do |user_fundraiser| %>
+        <tr>
+          <td><%= user_fundraiser.fundraiser.name %></td>
+          <td><%= user_fundraiser.fundraiser.event_date.strftime("%A, %B %d, %Y") %></td>
+          <td><%= user_fundraiser.fundraiser.location %></td>
+          <td>
+            <% if user_fundraiser.fundraiser.before_deadline? %>
+              <%= button_to 'Remove', user_fundraiser_path(user_fundraiser), :method => :delete, :confirm => 'Please consult the fundraising chairs before removing from your schedule.', :class => 'btn btn-danger' %>
+            <% else %>
+              <a href="#" rel="tooltip" data-original-title="Please contact a fundraising chair to request removal of this fundraiser."><button class="btn btn-warning">Remove</button></a>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

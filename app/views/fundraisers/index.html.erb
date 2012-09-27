@@ -1,23 +1,28 @@
 <% if user_signed_in? %>
-<h1>Steeler's Games</h1>
-<table class="table table-bordered table-striped">
+<h1 class="steelers">Steeler's Games</h1>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Event Name</th>
       <th>Event Date</th>
       <th>Location</th>
+      <th>Capacity</th>
+      <th></th>
+      <% if current_user.is_fundraiser? %>
       <th></th>
       <th></th>
-      <th></th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
     <% @fundraisers.each do |fundraiser| %>
+    <% fundraiser.update_count %>
     <% if fundraiser.fundraiser_type.name == "Steelers Game" %>
       <tr>
         <td><%= link_to fundraiser.name, fundraiser_path(fundraiser) %></td>
-        <td><%= fundraiser.event_date %></td>
+        <td><%= fundraiser.event_date.strftime("%A, %B %d, %Y") %></td>
         <td><%= fundraiser.location %></td>
+        <td><%= fundraiser.total_count %>/<%= fundraiser.capacity %></td>
         <td>
           <%= render :partial => 'buttons', :locals => {:fundraiser => fundraiser} %>
         </td>
@@ -27,15 +32,18 @@
   </tbody>
 </table>
 <h1>Rent-A-Rowers</h1>
-<table class="table table-bordered table-striped">
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Event Name</th>
       <th>Event Date</th>
       <th>Location</th>
+      <th>Capacity</th>
+      <th></th>
+      <% if current_user.is_fundraiser? %>
       <th></th>
       <th></th>
-      <th></th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
@@ -43,49 +51,42 @@
     <% if fundraiser.fundraiser_type.name == "Rent-A-Rower" %>
       <tr>
         <td><%= link_to fundraiser.name, fundraiser_path(fundraiser) %></td>
-        <td><%= fundraiser.event_date %></td>
+        <td><%= fundraiser.event_date.strftime("%A, %B %d, %Y") %></td>
         <td><%= fundraiser.location %></td>
+        <td><%= fundraiser.total_count %>/<%= fundraiser.capacity %></td>
         <td>
-        <% if current_user.is_fundraiser? %>
-              <%= link_to 'Edit', edit_fundraiser_path(fundraiser), :class => 'btn btn-mini' %>
-              <%= link_to 'Destroy', fundraiser_path(fundraiser), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
-              <%= button_to "Sign Up", { :action => "index", :controller => 'user_fundraisers', :user_id => current_user.id, :fundraiser_id => fundraiser.id }, :method => "create", :class => 'btn btn-mini' %> 
-        <% else %>
-              <%= button_to "Sign Up", { :action => "index", :controller => 'user_fundraisers', :user_id => current_user.id, :fundraiser_id => fundraiser.id }, :method => "create", :class => 'btn btn-mini' %> 
-        <% end %>
+          <%= render :partial => 'buttons', :locals => {:fundraiser => fundraiser} %>
         </td>
       </tr>
     <% end %>
     <% end %>
   </tbody>
 </table>
-<h1>Gwen's Girls</h1>
-<table class="table table-bordered table-striped">
+<%= image_tag("gwens.gif") %>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Event Name</th>
       <th>Event Date</th>
       <th>Location</th>
+      <th>Capacity</th>
+      <th></th>
+      <% if current_user.is_fundraiser? %>
       <th></th>
       <th></th>
-      <th></th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
     <% @fundraisers.each do |fundraiser| %>
-      <% if fundraiser.fundraiser_type.name == "Gwen's Girls" %>
+      <% if fundraiser.fundraiser_type.name == "Gwens Girls" %>
       <tr>
         <td><%= link_to fundraiser.name, fundraiser_path(fundraiser) %></td>
-        <td><%= fundraiser.event_date %></td>
+        <td><%= fundraiser.event_date.strftime("%A, %B %d, %Y") %></td>
         <td><%= fundraiser.location %></td>
+        <td><%= fundraiser.total_count %>/<%= fundraiser.capacity %></td>
         <td>
-        <% if current_user.is_fundraiser? %>
-              <%= link_to 'Edit', edit_fundraiser_path(fundraiser), :class => 'btn btn-mini' %>
-              <%= link_to 'Destroy', fundraiser_path(fundraiser), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
-              <%= button_to "Sign Up", { :action => "index", :controller => 'user_fundraisers', :user_id => current_user.id, :fundraiser_id => fundraiser.id }, :method => "create", :class => 'btn btn-mini' %> 
-        <% else %>
-              <%= button_to "Sign Up", { :action => "index", :controller => 'user_fundraisers', :user_id => current_user.id, :fundraiser_id => fundraiser.id }, :method => "create", :class => 'btn btn-mini' %> 
-        <% end %>
+          <%= render :partial => 'buttons', :locals => {:fundraiser => fundraiser} %>
         </td>
       </tr>
     <% end %>
@@ -94,7 +95,7 @@
 </table>
 
 <% if current_user.is_fundraiser? %>
-  <%= link_to 'New', new_fundraiser_path, :class => 'btn btn-primary' %>
+  <%= button_to 'New', new_fundraiser_path, :method => 'get', :class => 'btn btn-primary' %>
 <% end %>
 <% else %>
 

@@ -12,6 +12,15 @@ class UserFundraisersController < ApplicationController
     end
   end
 
+  def my_fundraisers
+    @user_fundraisers = UserFundraiser.current_user(current_user)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @user_fundraisers }
+    end
+  end
+
   # GET /user_fundraisers/1
   # GET /user_fundraisers/1.json
   def show
@@ -54,7 +63,7 @@ class UserFundraisersController < ApplicationController
         format.html { redirect_to @user_fundraiser, notice: 'User fundraiser was successfully created.' }
         format.json { render json: @user_fundraiser, status: :created, location: @user_fundraiser }
       else
-        format.html { render action: "new" }
+        format.html { render action: "my_fundraisers" }
         format.json { render json: @user_fundraiser.errors, status: :unprocessable_entity }
       end
     end
@@ -83,7 +92,7 @@ class UserFundraisersController < ApplicationController
     @user_fundraiser.destroy
 
     respond_to do |format|
-      format.html { redirect_to user_fundraisers_url }
+      format.html { redirect_to my_fundraisers_url }
       format.json { head :no_content }
     end
   end

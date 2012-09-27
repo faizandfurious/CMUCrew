@@ -3,27 +3,55 @@
 <h1>Welcome Back, <%= current_user.first_name %>.</h1></br>
 
 <% if @practice.nil? %>
-	<div>There is currently no practice scheduled for tomorrow. </div>
+  <div>There is currently no practice scheduled for tomorrow. </div>
 <% else %>
 <div class= "schedule">
-	<h3>Schedule for <%= @practice.date.strftime("%A, %B %d") %>.</h3></br>
-	<div class="workout-description">
-		<p>Launch time is <strong><%= @practice.time %></strong>.</p>
-		<p>Tomorrow's practice will be <strong><%= @practice.workout_type.name %></strong>.</p>
-	</div>
-	<div class="boat-assignment">
-		<ul class="boat-lineup">
-			<h3>Boat lineup</h3>
-			<li><strong>Coxswain </strong>Filipino Jones</li>				
-			<li><strong>Stroke Seat </strong>Joshua Harvey</li>
-			<li><strong>3 Seat </strong>Joe Guihan</li>
-			<li><strong>2 Seat </strong>Faiz Abbasi</li>
-			<li><strong>Bow Seat </strong>Wesley Transue</li>
-		</ul>
-		<p>You will be rowing the <strong>White V1</strong>.
-	</div>
+  <h3>Schedule for <%= @practice.date.strftime("%A, %B %d") %>.</h3></br>
+  <div class="workout-description">
+    <p>Launch time is <strong><%= @practice.time %></strong>.</p>
+    <p>Tomorrow's practice will be <strong><%= @practice.workout_type.name %></strong>.</p>
+  </div>
+  <div class="boat-assignment">
+    <ul class="boat-lineup">
+      <h3>Boat lineup</h3>
+      <li><strong>Coxswain </strong>Filipino Jones</li>       
+      <li><strong>Stroke Seat </strong>Joshua Harvey</li>
+      <li><strong>3 Seat </strong>Joe Guihan</li>
+      <li><strong>2 Seat </strong>Faiz Abbasi</li>
+      <li><strong>Bow Seat </strong>Wesley Transue</li>
+    </ul>
+    <p>You will be rowing the <strong>White V1</strong>.
+  </div>
 </div>
 <% end %>
+
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Fundraiser Name</th>
+      <th>Fundraiser Date</th>
+      <th>Location</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @user_fundraisers.each do |user_fundraiser| %>
+        <tr>
+          <td><%= user_fundraiser.fundraiser.name %></td>
+          <td><%= user_fundraiser.fundraiser.event_date.strftime("%A, %B %d, %Y") %></td>
+          <td><%= user_fundraiser.fundraiser.location %></td>
+          <td>
+            <% if user_fundraiser.fundraiser.before_deadline? %>
+              <%= button_to 'Remove', user_fundraiser_path(user_fundraiser), :method => :delete, :confirm => 'Please consult the fundraising chairs before removing from your schedule.', :class => 'btn btn-danger' %>
+            <% else %>
+              <a href="#" rel="tooltip" data-original-title="Please contact a fundraising chair to request removal of this fundraiser."><button class="btn btn-warning">Remove</button></a>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+  </tbody>
+</table>
 
 <br />
 
@@ -31,23 +59,23 @@
 
 <h3>Welcome to the Carnegie Mellon University Rowing Club! </h3>
 <div class="info_section">
-	<p>
-		Located in Pittsburgh, PA, Carnegie Mellon has fielded competitive men's
-		and women's crews since 1987. As member of American Collegiate Rowing
-		Association we compete in fall and spring races throughout the Northeast
-		and Mid Atlantic regions. Over the years we've been competitive at regattas 
-		such as Head of the Charles and Dad Vail Regatta.
-	</p>
+  <p>
+    Located in Pittsburgh, PA, Carnegie Mellon has fielded competitive men's
+    and women's crews since 1987. As member of American Collegiate Rowing
+    Association we compete in fall and spring races throughout the Northeast
+    and Mid Atlantic regions. Over the years we've been competitive at regattas 
+    such as Head of the Charles and Dad Vail Regatta.
+  </p>
 
-	<h3>Recent News</h3>
+  <h3>Recent News</h3>
 
-	<p>
-		<h5>Tartan Crew is on Summer Break (but don't think we're on vacation)</h5></br>        
-		Our team is rigorously preparing for the upcoming Fall season. In fact we have some rowers still in Pittsburgh, rowing multiple times a week with the Three Rivers Rowing Assocations' Masters Men and Masters Women. We also have rowers practicing with prestigious crews out in Philadelphia. Our other members are in various parts of the country (and world!) preparing for the Fall.
-	</p>
-	<p>
-		And we're happy to announce that we have two members participating in the LiveSTRONG Challenge alongside several CMU Crew alumni in Philadelphia.
-	</p>
+  <p>
+    <h5>Tartan Crew is on Summer Break (but don't think we're on vacation)</h5></br>        
+    Our team is rigorously preparing for the upcoming Fall season. In fact we have some rowers still in Pittsburgh, rowing multiple times a week with the Three Rivers Rowing Assocations' Masters Men and Masters Women. We also have rowers practicing with prestigious crews out in Philadelphia. Our other members are in various parts of the country (and world!) preparing for the Fall.
+  </p>
+  <p>
+    And we're happy to announce that we have two members participating in the LiveSTRONG Challenge alongside several CMU Crew alumni in Philadelphia.
+  </p>
 </div>
 
 

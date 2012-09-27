@@ -1,5 +1,7 @@
 CMUCrewWebsite::Application.routes.draw do
 
+  resources :locations
+
   resources :races
 
   resources :race_lineups
@@ -21,6 +23,8 @@ CMUCrewWebsite::Application.routes.draw do
   resources :roles
 
   resources :rowers
+
+  match '/my_fundraisers' => 'user_fundraisers#my_fundraisers'
 
   devise_for :users
   resources :users, :controller => 'user'
