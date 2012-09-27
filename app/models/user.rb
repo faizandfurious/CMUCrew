@@ -28,6 +28,10 @@ class User < ActiveRecord::Base
     self.update_roles
     @roles
   end
+
+  def full_name
+    self.first_name + " " + self.last_name
+  end
   
   # Returns true if authorized_role is one of this user's authorized roles
   def role? authorized_role

@@ -12,7 +12,7 @@ class Fundraiser < ActiveRecord::Base
   
     #Scopes
 	# -----------------------------  
-    scope :before_event_date, where("event_date < ?", Date.today)
+    scope :before_event_date, where("event_date > ?", Date.today)
 
     #Constants
 	# -----------------------------  

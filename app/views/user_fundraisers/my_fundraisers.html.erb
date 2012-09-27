@@ -17,7 +17,7 @@
   <tbody>
       <% @user_fundraisers.each do |user_fundraiser| %>
         <tr>
-          <td><%= user_fundraiser.fundraiser.name %></td>
+        <td><%= link_to user_fundraiser.fundraiser.name, fundraiser_path(user_fundraiser.fundraiser) %></td>
           <td><%= user_fundraiser.fundraiser.event_date.strftime("%A, %B %d, %Y") %></td>
           <td><%= user_fundraiser.fundraiser.location %></td>
           <td>

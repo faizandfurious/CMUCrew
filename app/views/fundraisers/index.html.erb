@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
 <h1 class="steelers">Steeler's Games</h1>
-<table class="table table-bordered table-steelered">
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Event Name</th>
@@ -31,8 +31,8 @@
     <% end %>
   </tbody>
 </table>
-<h1>Rent-A-Rowers</h1>
-<table class="table table-bordered table-cmu">
+<h1 class="cmu">Rent-A-Rowers</h1>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Event Name</th>
@@ -49,37 +49,6 @@
   <tbody>
     <% @fundraisers.each do |fundraiser| %>
     <% if fundraiser.fundraiser_type.name == "Rent-A-Rower" %>
-      <tr>
-        <td><%= link_to fundraiser.name, fundraiser_path(fundraiser) %></td>
-        <td><%= fundraiser.event_date.strftime("%A, %B %d, %Y") %></td>
-        <td><%= fundraiser.location %></td>
-        <td><%= fundraiser.total_count %>/<%= fundraiser.capacity %></td>
-        <td>
-          <%= render :partial => 'buttons', :locals => {:fundraiser => fundraiser} %>
-        </td>
-      </tr>
-    <% end %>
-    <% end %>
-  </tbody>
-</table>
-<%= image_tag("gwens.gif") %>
-<table class="table table-bordered table-gwens">
-  <thead>
-    <tr>
-      <th class="gwens">Event Name</th>
-      <th>Event Date</th>
-      <th>Location</th>
-      <th>Capacity</th>
-      <th></th>
-      <% if current_user.is_fundraiser? %>
-      <th></th>
-      <th></th>
-      <% end %>
-    </tr>
-  </thead>
-  <tbody>
-    <% @fundraisers.each do |fundraiser| %>
-      <% if fundraiser.fundraiser_type.name == "Gwens Girls" %>
       <tr>
         <td><%= link_to fundraiser.name, fundraiser_path(fundraiser) %></td>
         <td><%= fundraiser.event_date.strftime("%A, %B %d, %Y") %></td>

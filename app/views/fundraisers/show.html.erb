@@ -10,21 +10,20 @@
   <p>This event already occured.</p>
 <% else %>
   <p>This event will be occuring on <strong><%= @fundraiser.event_date.strftime("%A, %B %d, %Y")%></strong>, at <strong><%= @fundraiser.location %></strong>.
+  </p>
+  <p><strong><%= @fundraiser.total_count %></strong> out of <strong><%= @fundraiser.capacity %></strong> spots have been filled.
   <% if !@user_fundraisers.nil? && @user_fundraisers.length < 1 %>
     </p><p>There is currently no one signed up for this event. Be the first!</p>
     <%= button_to "Sign Up", { :action => "index", :controller => 'user_fundraisers', :user_id => current_user.id, :fundraiser_id => @fundraiser.id }, :method => "create", :class => 'btn btn-info' %>
-
-  <% else %>
-    There are <strong><%= @fundraiser.capacity - @fundraiser.total_count %></strong> spots left out of <strong><%= @fundraiser.capacity %></strong>.</p>
-
-    <p> Here is a list of the attendees:</p>
-
+  <% end %>
+<% end %>
+<p> List of attendees:</p>
     <div id="fundraiser-table-show">
       <table class="table table-bordered table-striped">
         <tbody>
           <% @user_fundraisers.each do |user_fundraiser| %>
             <tr>
-              <td><%= User.find(user_fundraiser.user_id).first_name %>
+              <td><%= User.find(user_fundraiser.user_id).full_name %>
               <% if current_user.is_fundraiser? %>
                 <%= link_to 'Remove', user_fundraiser_path(user_fundraiser), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger adjust-right' %>
               <% end %>
@@ -34,18 +33,16 @@
         </tbody>
       </table>
     </div>
-    <% if @fundraiser.is_full? %>
-    <p><em>Note: This fundraising event has reached capacity, and cannot accomodate anymore volunteers. Thanks!</em></p>
-    <% elsif @fundraiser.signed_up?(@current_user) %>
-    <p><em>Note: You are currently signed up for this fundraising event.</em></p>
-    <% end %>
-  <% end %>
-<% end %>
 </div>
 
 
 
 <% if current_user.is_fundraiser? %>
+    <% if @fundraiser.is_full? %>
+    <p><em>Note: This fundraising event has reached capacity, and cannot accomodate anymore volunteers. Thanks!</em></p>
+    <% elsif @fundraiser.signed_up?(@current_user) %>
+    <p><em>Note: You are currently signed up for this fundraising event.</em></p>
+    <% end %>
 <div class="form-actions">
   <%= link_to 'Back', fundraisers_path, :class => 'btn'  %>
   <% if can? :update, @fundraiser %>
