@@ -208,6 +208,7 @@ DEPENDENCIES
   email_spec (>= 1.2.1)
   factory_girl_rails (>= 1.7.0)
   geocoder
+  gon
   high_voltage
   jquery-rails
   launchy (>= 2.0.5)
